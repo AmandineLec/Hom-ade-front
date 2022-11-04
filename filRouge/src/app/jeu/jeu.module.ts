@@ -14,6 +14,7 @@ import { MapSudComponent } from '../map-sud/map-sud.component';
 import { MapSudOuestComponent } from '../map-sud-ouest/map-sud-ouest.component';
 import { MapOuestComponent } from '../map-ouest/map-ouest.component';
 import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.component';
+import { JeuRoutingModule } from './jeu-routing.module';
 
 
 
@@ -35,7 +36,8 @@ import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.componen
     MapNordOuestComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    JeuRoutingModule
   ]
 })
 export class JeuModule { }

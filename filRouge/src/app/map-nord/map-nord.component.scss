@@ -3,13 +3,42 @@
     grid-row: 1/span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     background-image: url('../../assets/img/Background/PageHaut.png');
     background-size: cover;
     background-color: aqua;
     background-repeat: no-repeat;
     margin: auto;
-    height: 92vh;
+    height: 90vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 5 / span 2;
+}
+#bas{
+    grid-column: 5 / span 2;
+    grid-row: 10;
+}
+#droite{
+    grid-column: 12;
+    grid-row: 5 / span 2;
+}
+#gauche{
+    grid-row: 5 / span 2;
 }
 
 button {
@@ -17,17 +46,26 @@ button {
     border: none;
 }
 
-.map__form--mare {
-    grid-column: 6/span 5;
-    grid-row: 1/span 1;
+#mare {
+    grid-column: 7/span 3;
+    grid-row: 5/span 1;
 }
 
-.map__form--coton {
+#coton {
     grid-column: 9/span 2;
-    grid-row: 3/span 2;
+    grid-row: 6/span 2;
 }
 
-.map__form--coquille {
-    grid-column: 7/span 1;
-    grid-row: 4/span 1;
+#coquille {
+    grid-column: 6/span 1;
+    grid-row: 6/span 1;
+}
+
+#roseau {
+    grid-column: 4/span 1;
+    grid-row: 5/span 1;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
 }

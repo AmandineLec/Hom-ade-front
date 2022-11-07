@@ -56,7 +56,7 @@ button{
 }
 
 #paquerette{
-    grid-column: 7 / span 1;
+    grid-column: 7 / span 2;
     grid-row: 3 / span 2;
 }
 
@@ -72,4 +72,8 @@ button{
 #carpe{
     grid-column: 11 / span 1;
     grid-row: 2 / span 2;
+}
+
+app-menu-jeu{
+    display: flex;
 }

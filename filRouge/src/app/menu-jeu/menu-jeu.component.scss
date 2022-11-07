@@ -1,0 +1,21 @@
+div{
+    background-color: black;
+    margin: 0;
+    width: 100%;
+    height: 93px;
+    background-color: #8C592A;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button{
+    background-color: transparent;
+    border: 1px solid #EEAB00;
+    color: #EEAB00;
+    padding: 3px;
+    margin: 10px;
+    width: 150px;
+    height: 3rem;
+    text-align: center;
+}

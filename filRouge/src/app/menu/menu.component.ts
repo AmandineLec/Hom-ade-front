@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  @Output() jouer = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  play(value : boolean){
+    this.jouer.emit(value);
   }
 
 }

@@ -21,7 +21,8 @@ const routes: Routes = [
   {path: 's', component: MapSudComponent},
   {path: 'so', component: MapSudOuestComponent},
   {path: 'o', component: MapOuestComponent},
-  {path: 'no', component: MapNordOuestComponent}
+  {path: 'no', component: MapNordOuestComponent},
+  {path: 'menu', component: MenuJeuComponent}
 ];
 
 

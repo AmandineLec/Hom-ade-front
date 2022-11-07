@@ -1,16 +1,18 @@
 <div class="map">
-    <a routerLink="n">nord</a>
+    <a routerLink="/jeu/n" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
+    <a routerLink="/jeu/s" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
+    <a routerLink="/jeu/e" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    <a routerLink="/jeu/o" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
 
-    <form class="map__form--maison" action="#">
-        <button><img class="map__image--maison" src="../../assets/Maison.png" /> </button>
-    </form>
 
-    <form class="map__form--arbre" action="#">
-        <button><img class="map__image--arbre" src="../../assets/Sequoia.png"/>  </button>
-    </form>
+    <button id="maison" ><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </button>
 
-    <form class="map__form--poisson" action="#">
-        <button><img src="../../assets/Sardine.png"/> </button>
-    </form>
+
+    <button id="arbre"><img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" /> </button>
+
+
+    <button id="poisson"><img class="imgRessources" src="../../assets/img/Ressources/Recoltable/Poisson/Sardine.png" /> </button>
+
+    <button id="silex"><img class="imgRessources" src="../../assets/img/Ressources/Ramassable/Silex.png"/> </button>
 
 </div>

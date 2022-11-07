@@ -3,13 +3,40 @@
     grid-row: 1/span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    background-image: url('../../assets/PageAccueil.png');
+    grid-template-rows: repeat(10, 1fr);
+    background-image: url('../../assets/img/Background/PageAccueil.png');
     background-size: cover;
     background-color: aqua;
     background-repeat: no-repeat;
     margin: auto;
-    height: 92vh;
+    height: 90vh;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 7 / span 2;
+}
+#bas{
+    grid-column: 7 / span 2;
+    grid-row: 10;
+}
+#droite{
+    grid-column: 13;
+    grid-row: 5 / span 2;
+}
+#gauche{
+    grid-row: 5 / span 2;
 }
 
 button {
@@ -17,25 +44,36 @@ button {
     border: none;
 }
 
-.map__form--maison {
+#maison {
     grid-column: 2/span 4;
     grid-row: 2/span 7;
+    
 }
 
-.map__form--arbre {
+#arbre {
     grid-column: 6/span 2;
     grid-row: 2/span 5;
+    
 }
 
-.map__form--poisson {
+#poisson {
     grid-column: 9/span 2;
     grid-row: 2/span 1;
-  }
+}
 
-.map__image--maison {
+#silex {
+    grid-column: 10/span 1;
+    grid-row: 9;
+}
+
+#imgMaison {
     height: 430px;
 }
 
-.map__image--arbre {
+#imgArbre {
     height: 300px;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
 }

@@ -1,0 +1,77 @@
+.container{
+    background-color: aqua;
+    background-image: url('../../assets/img/Background/PageBasDroite.png');
+    margin: auto;
+    height: 90vh;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+button{
+    background-color: transparent; 
+    border: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(70%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 10;
+    filter: contrast(20%);
+}
+#droite{
+    grid-column: 12;
+    grid-row: 5 / span 2;
+    filter: contrast(20%);
+}
+#gauche{
+    grid-row: 5 / span 2;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}
+
+#chanvre{
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 4;
+    width: 80%;
+}
+
+#coquille{
+    grid-column: 7 / span 2;
+    grid-row: 3 / span 2;
+}
+
+#jute{
+    grid-column: 6 / span 2;
+    grid-row: 8 / span 3;
+    width: 70%;
+}
+#imgJute{
+    width: 100%;
+}
+
+#brochet{
+    grid-column: 11 / span 1;
+    grid-row: 2 / span 2;
+}

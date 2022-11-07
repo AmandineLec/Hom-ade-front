@@ -27,12 +27,11 @@ button{
     width: 100%;
 }
 .imgDirection:hover{
-    filter: contrast(70%);
+    filter: contrast(50%);
 }
 
 #haut{
     grid-column: 6 / span 2;
-    filter: contrast(20%);
 }
 #bas{
     grid-column: 6 / span 2;
@@ -41,7 +40,6 @@ button{
 #droite{
     grid-column: 12;
     grid-row: 5 / span 2;
-    filter: contrast(20%);
 }
 #gauche{
     grid-row: 5 / span 2;

@@ -1,0 +1,71 @@
+.container{
+    background-color: aqua;
+    background-image: url('../../assets/img/Background/PageBasGauche.png');
+    margin: auto;
+    height: 90vh;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+button{
+    background-color: transparent; 
+    border: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 10;
+}
+#droite{
+    grid-column: 12;
+    grid-row: 5 / span 2;
+}
+#gauche{
+    grid-row: 5 / span 2;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}
+
+#seve{
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 1;
+    width: 80%;
+}
+
+#bois{
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 1;
+}
+
+#schiste{
+    grid-column: 5 / span 2;
+    grid-row: 2 / span 2;
+}
+
+#chene{
+    grid-column: 10 / span 2;
+    grid-row: 7 / span 3;
+}

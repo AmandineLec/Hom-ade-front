@@ -27,7 +27,7 @@ button{
     width: 100%;
 }
 .imgDirection:hover{
-    filter: contrast(70%);
+    filter: contrast(50%);
 }
 
 #haut{
@@ -36,12 +36,10 @@ button{
 #bas{
     grid-column: 6 / span 2;
     grid-row: 10;
-    filter: contrast(20%);
 }
 #droite{
     grid-column: 12;
     grid-row: 5 / span 2;
-    filter: contrast(20%);
 }
 #gauche{
     grid-row: 5 / span 2;
@@ -61,8 +59,8 @@ button{
 }
 
 #silex{
-    grid-column: 2;
-    grid-row: 8;
+    grid-column: 1;
+    grid-row: 9 / span 2;
 }
 
 #riviere{

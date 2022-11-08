@@ -9,6 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ObjetRecoltableService {
   private objetRecoltableUrl = 'localhost:8080/api/recolte';
+  objetsRecoltables: ObjetRecoltable[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -19,11 +20,16 @@ export class ObjetRecoltableService {
     );
   }
 
-  getObjetRecoltable(id: number): Observable<ObjetRecoltable> {
-    const url = '${this.objetRecoltableUrl}/${id}';
-    return this.http.get<ObjetRecoltable>(url).pipe(
-      catchError(this.handleError<ObjetRecoltable>('getObjetRecoltable id=${id}'))
-    );
+  getObjetRecoltable(index: number): ObjetRecoltable {
+    this.getObjetsRecoltables().subscribe((objetsRecoltables) => {
+      this.objetsRecoltables = objetsRecoltables;
+    })
+    return this.objetsRecoltables[index];
+
+    // const url = '${this.objetRecoltableUrl}/${id}';
+    // return this.http.get<ObjetRecoltable>(url).pipe(
+    //   catchError(this.handleError<ObjetRecoltable>('getObjetRecoltable id=${id}'))
+    // );
   }
 
   recolte(id: number): Observable<ObjetRecoltable> {

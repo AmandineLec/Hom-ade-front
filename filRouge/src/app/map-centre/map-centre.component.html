@@ -1,18 +1,26 @@
 <div class="map">
-    <a routerLink="/jeu/n" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
-    <a routerLink="/jeu/s" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
+    <a routerLink="/jeu/n" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png"
+            alt=""></a>
+    <a routerLink="/jeu/s" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png"
+            alt=""></a>
     <a routerLink="/jeu/e" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
     <a routerLink="/jeu/o" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
 
 
     <button id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </button>
 
+    <!-- <div *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
+        <button id="arbre" (click)="recolte(0)">
+            <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" />
+        </button>
+    </div> -->
+    <ng-template #elseBlock>
+        <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
+    </ng-template>
 
-    <button id="arbre" (click)="recolte(0)"><img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" /> </button>
+    <button id="poisson" (click)="recolte(1)"><img class="imgRessources"
+            src="../../assets/img/Ressources/Recoltable/Poisson/Sardine.png" /> </button>
 
-
-    <button id="poisson"><img class="imgRessources" src="../../assets/img/Ressources/Recoltable/Poisson/Sardine.png" /> </button>
-
-    <button id="silex"><img class="imgRessources" src="../../assets/img/Ressources/Ramassable/Silex.png"/> </button>
+    <button id="silex"><img class="imgRessources" src="../../assets/img/Ressources/Ramassable/Silex.png" /> </button>
 
 </div>

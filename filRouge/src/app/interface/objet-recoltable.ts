@@ -1,7 +1,8 @@
 export interface ObjetRecoltable {
-    id: number;
+    idObjetRecoltable: number;
     nom: string;
     niveauRequis: number;
     pv: number;
     cooldown: number;
+    disparitionTime: number;
 }

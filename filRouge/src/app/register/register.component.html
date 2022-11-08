@@ -1,23 +1,23 @@
 <div id="mainDiv">
   <div id="box">
     <h2>INSCRIPTION</h2>
-    <form class="subscribe" action="" method="get">
+    <form (ngSubmit)="onSubmit()" [formGroup]="personnage">
       <div>
-        <label for="identifiant">Identifiant :</label><br>
-        <input type="text" name="identifiant" id="identifiant" required>
+        <label for="mail">E-mail :</label><br>
+        <input type="text" name="mail"  id="mail" formControlName="mail" required>
+      </div>
+      <div>
+        <label for="pseudo">Pseudo :</label><br>
+        <input type="text" name="pseudo" id="pseudo" formControlName="pseudo"  required>
+      </div>
+      <div>
+        <label for="genre">Genre:</label><br>
+        <input type="text" name="pseudo" id="genre" formControlName="genre" required>
       </div>
       <div>
         <label for="password">Mot de passe :</label><br>
         <input type="password" id="password" name="password"
-               minlength="8" required>
-      </div>
-      <div>
-        <label for="pseudo">Pseudo :</label><br>
-        <input type="text" name="pseudo" id="pseudo" required>
-      </div>
-      <div>
-        <label for="mail">E-mail :</label><br>
-        <input type="text" name="mail" id="mail" required>
+               minlength="8" formControlName="password" required>
       </div>
       <div id="subscription">
         <input  type="submit" value="S'inscrire!">

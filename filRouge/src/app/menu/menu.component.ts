@@ -3,7 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  host : {'class' : 'menu'}
 })
 export class MenuComponent implements OnInit {
   @Output() jouer = new EventEmitter<boolean>();

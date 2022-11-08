@@ -1,14 +1,12 @@
 .container{
-    background-color: aqua;
+    background-color: #493530;
     background-image: url('../../assets/img/Background/PageBasGauche.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    background-size: 100% 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
     justify-items: center;
+    grid-column: 1/ span 12;
+    background-repeat: no-repeat;
 }
 
 button{
@@ -32,17 +30,20 @@ button{
 
 #haut{
     grid-column: 6 / span 2;
+    grid-row: 1/ span 1;
 }
 #bas{
     grid-column: 6 / span 2;
-    grid-row: 10;
+    grid-row: 4/ span 1;
+    margin-top: 80px;
 }
 #droite{
-    grid-column: 12;
-    grid-row: 5 / span 2;
+    grid-column: 12/ span 1;
+    grid-row: 3/ span 1;
 }
 #gauche{
-    grid-row: 5 / span 2;
+    grid-column: 1/ span 1;
+    grid-row: 3/ span 1;
 }
 
 .imgRessources:hover{
@@ -51,21 +52,26 @@ button{
 
 #seve{
     grid-column: 1 / span 1;
-    grid-row: 9 / span 2;
+    grid-row: 4/ span 1;
     width: 80%;
 }
 
 #bois{
     grid-column: 2 / span 2;
-    grid-row: 8 / span 1;
+    grid-row : 3/ span 1;
 }
 
 #schiste{
-    grid-column: 5 / span 2;
-    grid-row: 2 / span 2;
+    grid-column: 4 / span 2;
+    grid-row: 1/ span 2;
 }
 
 #chene{
     grid-column: 10 / span 2;
-    grid-row: 7 / span 3;
+    grid-row: 2/ span 2;
+}
+
+.imgRessources {
+    width : 100%; 
+    object-fit: contain;
 }

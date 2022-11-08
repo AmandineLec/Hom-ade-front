@@ -5,11 +5,9 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
     background-image: url('../../assets/img/Background/PageBas.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-color: aqua;
     background-repeat: no-repeat;
-    margin: auto;
-    height: 92vh;
 }
 .direction{
     width: 50px;

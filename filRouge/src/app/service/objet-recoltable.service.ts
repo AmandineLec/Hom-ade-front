@@ -8,7 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ObjetRecoltableService {
-  private objetRecoltableUrl = '';
+  private objetRecoltableUrl = 'localhost:8080/api/recolte';
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +23,13 @@ export class ObjetRecoltableService {
     const url = '${this.objetRecoltableUrl}/${id}';
     return this.http.get<ObjetRecoltable>(url).pipe(
       catchError(this.handleError<ObjetRecoltable>('getObjetRecoltable id=${id}'))
+    );
+  }
+
+  recolte(id: number): Observable<ObjetRecoltable> {
+    const url: string = this.objetRecoltableUrl + '?index=' + id;
+    return this.http.get<ObjetRecoltable>(url).pipe(
+      catchError(this.handleError<ObjetRecoltable>('recolte'))
     );
   }
 

@@ -1,7 +1,7 @@
 export interface Personnage {
-  id: number;
+  //id: number;
+  name: string;
+  sexe: string;
   mail: string;
-  pseudo: string;
-  genre: string;
   password : string;
 }

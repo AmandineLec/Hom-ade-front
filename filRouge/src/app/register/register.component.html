@@ -3,16 +3,16 @@
     <h2>INSCRIPTION</h2>
     <form (ngSubmit)="onSubmit()" [formGroup]="personnage">
       <div>
+        <label for="name">Nom :</label><br>
+        <input type="text" name="name" id="name" formControlName="name"  required>
+      </div>
+      <div>
+        <label for="sexe">Sexe:</label><br>
+        <input type="text" name="sexe" id="sexe" formControlName="sexe" required>
+      </div>
+      <div>
         <label for="mail">E-mail :</label><br>
         <input type="text" name="mail"  id="mail" formControlName="mail" required>
-      </div>
-      <div>
-        <label for="pseudo">Pseudo :</label><br>
-        <input type="text" name="pseudo" id="pseudo" formControlName="pseudo"  required>
-      </div>
-      <div>
-        <label for="genre">Genre:</label><br>
-        <input type="text" name="pseudo" id="genre" formControlName="genre" required>
       </div>
       <div>
         <label for="password">Mot de passe :</label><br>

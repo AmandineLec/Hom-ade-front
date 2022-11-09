@@ -8,16 +8,16 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ObjetRecoltableService {
-  private objetRecoltableUrl = 'localhost:8080/api/recolte';
+  private objetRecoltableUrl = 'localhost:8080/api/';
   objetsRecoltables: ObjetRecoltable[] = [];
 
   constructor(private http: HttpClient) { }
 
   getObjetsRecoltables(): Observable<ObjetRecoltable[]> {
-    return this.http.get<ObjetRecoltable[]>(this.objetRecoltableUrl)
-    .pipe(
-      catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
-    );
+    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables');
+    // .pipe(
+    //   catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
+    // );
   }
 
   getObjetRecoltable(index: number): ObjetRecoltable {
@@ -33,10 +33,11 @@ export class ObjetRecoltableService {
   }
 
   recolte(id: number): Observable<ObjetRecoltable> {
-    const url: string = this.objetRecoltableUrl + '?index=' + id;
-    return this.http.get<ObjetRecoltable>(url).pipe(
-      catchError(this.handleError<ObjetRecoltable>('recolte'))
-    );
+    const url: string = this.objetRecoltableUrl + 'recolte?index=' + id;
+    return this.http.get<ObjetRecoltable>(url);
+      // .pipe(
+      //   catchError(this.handleError<ObjetRecoltable>('recolte'))
+      // );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -46,5 +47,5 @@ export class ObjetRecoltableService {
       return of(result as T);
     }
   }
-  
+
 }

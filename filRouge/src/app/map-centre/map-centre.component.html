@@ -9,11 +9,11 @@
 
     <button id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </button>
 
-    <!-- <div *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
+    <div *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
         <button id="arbre" (click)="recolte(0)">
             <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" />
         </button>
-    </div> -->
+    </div>
     <ng-template #elseBlock>
         <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
     </ng-template>

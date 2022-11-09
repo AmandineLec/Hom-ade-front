@@ -11,7 +11,13 @@ export class ObjetRecoltableService {
   private objetRecoltableUrl = 'http://localhost:8080/api/';
   objetsRecoltables: ObjetRecoltable[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.getObjetsRecoltables().subscribe((objetsRecoltables) => {
+      this.objetsRecoltables = objetsRecoltables;
+    });
+    for(let i = 0; i < this.objetsRecoltables.length; i++)
+      this.objetsRecoltables[i].index = i;
+  }
 
   getObjetsRecoltables(): Observable<ObjetRecoltable[]> {
     return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables');
@@ -24,6 +30,7 @@ export class ObjetRecoltableService {
     this.getObjetsRecoltables().subscribe((objetsRecoltables) => {
       this.objetsRecoltables = objetsRecoltables;
     })
+
     return this.objetsRecoltables[index];
 
     // const url = '${this.objetRecoltableUrl}/${id}';
@@ -32,8 +39,8 @@ export class ObjetRecoltableService {
     // );
   }
 
-  recolte(id: number): Observable<ObjetRecoltable> {
-    const url: string = this.objetRecoltableUrl + 'recolte?index=' + id;
+  recolte(index: number): Observable<ObjetRecoltable> {
+    const url: string = this.objetRecoltableUrl + 'recolte?index=' + index;
     return this.http.get<ObjetRecoltable>(url);
       // .pipe(
       //   catchError(this.handleError<ObjetRecoltable>('recolte'))

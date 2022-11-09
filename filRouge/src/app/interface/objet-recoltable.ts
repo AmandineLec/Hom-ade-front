@@ -5,4 +5,5 @@ export interface ObjetRecoltable {
     pv: number;
     cooldown: number;
     disparitionTime: number;
+    index?: number;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ObjetRecoltable } from '../interface/objet-recoltable';
+import { ObjetRecoltableService } from '../service/objet-recoltable.service';
 
 @Component({
   selector: 'app-map-nord',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-nord.component.scss']
 })
 export class MapNordComponent implements OnInit {
+  objetsRecoltables: ObjetRecoltable[] = [];
 
-  constructor() { }
-
+  constructor(private objRecSer: ObjetRecoltableService) { }
+    
   ngOnInit(): void {
+    this.objRecSer.getObjetsRecoltables().subscribe((objetsRecoltables) => {
+      this.objetsRecoltables = objetsRecoltables;
+    });
   }
 
+  recolte(index: number) {
+    this.objRecSer.recolte(index).subscribe((objetRecoltable) => {
+      this.objetsRecoltables[index] = objetRecoltable;
+    });
+  }
 }

@@ -13,14 +13,13 @@ export class MapCentreComponent implements OnInit {
   constructor(private objRecSer: ObjetRecoltableService) { }
     
   ngOnInit(): void {
-    this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(0));
-    this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(1));
-    this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(2));
+    this.objRecSer.getObjetsRecoltables().subscribe((objetsRecoltables) => {
+      this.objetsRecoltables = objetsRecoltables;
+    });
   }
 
   recolte(index: number) {
-    const id = this.objetsRecoltables[index].idObjetRecoltable;
-    this.objRecSer.recolte(id).subscribe((objetRecoltable) => {
+    this.objRecSer.recolte(index).subscribe((objetRecoltable) => {
       this.objetsRecoltables[index] = objetRecoltable;
     });
   }

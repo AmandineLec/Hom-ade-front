@@ -9,62 +9,147 @@
     justify-items: center;
     align-items: flex-end;
     background-repeat: no-repeat;
+    z-index: 0;
 }
 
+// Gestion Hover Buttons
+img:hover{
+    filter: contrast(20%);
+}
+
+// Buttons
 #cadre{
     background-color: transparent;
     border: 0px;
     width: 100px;
     grid-column: 3 / span 2;
     grid-row: 5;
+    position: relative;
+    z-index: 5;
 }
 #imgCadre{
     width: 100%;
-    rotate: 0.1 0.5 0.7 90deg;
+    rotate: 0.1 0.5 0.6 85deg;
 }
 
-#imgCadre:hover, #imgCadre2:hover, #imgSol:hover{
-    filter: contrast(20%);
+#etagere{
+    background-color: transparent;
+    border: 0px;
+    width: 100px;
+    grid-column: 10 / span 2;
+    grid-row: 6;
+    position: relative;
+    z-index: 5;  
+}
+#imgEtagere{
+    width: 100%;
+    rotate: 0.1 0.6 0.8 -85deg;
 }
 
-#sol{
+#table{
     background-color: transparent;
     border: 0px;
     width: 150px;
+    height: 100px;
     grid-column: 6 / span 2;
-    grid-row: 1 / span 2;
+    grid-row: 8 / span 2;
     position: relative;
-    top: 450px; 
-    z-index: 5;
+    z-index: 10;
+    
 }
-#imgSol{
+#imgTable{
     width: 100%;
 }
 
+#decoFond{
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    grid-column: 9 / span 1;
+    grid-row: 6 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgDecoFond{
+    width: 100%;
+    rotate: 0 3 0 30deg;
+}
+
+#decoGauche{
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    grid-column: 1 / span 1;
+    grid-row: 11 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgDecoGauche{
+    width: 100%;
+    rotate: 0 3 0 30deg;
+}
+
+
+#decoBas{
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    grid-column: 12 / span 1;
+    grid-row: 12 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgDecoBas{
+    width: 100%;
+    rotate: 0 3 0 30deg;
+}
+
+// Polygones murs/sol
 #bas{
-    border-bottom: 375px solid #8C592A;
-    border-left  : 570px solid transparent; 
-    border-right : 570px solid transparent;
+    border-bottom: 372px solid #8C592A;
+    border-left  : 575px solid transparent; 
+    border-right : 575px solid transparent;
     height : 0;
     width  : 40%;
     grid-column: 1 / span 12;
     grid-row: 7 / span 6;
-    border-image-slice: 0 0 14 0;
-    z-index: 0;
+    z-index: -250;
+    background-repeat:round;
 }
-#bas:after {
-    // width  : 0;
-    // height : 0;
-    // content: '';
-    // border-bottom : 50px solid green;
-    // border-right  : 20px solid transparent;
-    // border-left   : 20px solid transparent;
-    // position : absolute;
-    // top  : -50px;
-    // right: -20px;
-  }
-  #bas:hover{
-    filter: blur(2px);
-    z-index: 0;
-  }
-  
+
+#fond{
+    height : 100%;
+    width  : 40%;
+    background-color: #e29d5c;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 6;
+    z-index: -200;
+}
+
+#gauche{
+    align-self: center;
+    justify-self: flex-start;
+    border-bottom: 372px solid transparent ;
+    border-left : 576px solid #fac18c;
+    height : 100%;
+    width  : 0;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 9;
+    z-index: -200;
+    // border-image-source: url(../../assets/img/Décoration/fond2.png);
+    // border-image-width: 560px 580px 0px 0px;
+    // border-image-repeat: repeat;
+
+}
+
+#droite{
+    align-self: center;
+    justify-self: flex-start;
+    border-bottom: 372px solid transparent ;
+    border-right : 576px solid #fac18c;
+    height : 100%;
+    width  : 0;
+    grid-column: 10 / span 4;
+    grid-row: 1 / span 9;
+    z-index: -200;
+}

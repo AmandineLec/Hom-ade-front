@@ -1,9 +1,27 @@
 <div class="container" id="container">
+    <!-- Boutons objets -->
     <button type="button" id="cadre">
-        <img id="imgCadre" (click)="display($event)" [src]="cadre" alt="">
+        <img id="imgCadre" (click)="installeCadre()" [src]="cadre" alt="">
     </button>
-    <button type="button" id="sol">
-        <img id="imgSol" (click)="deco($event)" [src]="sol" alt="">
+    <button type="button" id="table">
+        <img id="imgTable" (click)="deco()" [src]="table" alt="">
     </button>
+    <button type="button" id="decoFond">
+        <img id="imgDecoFond" (click)="fond()" src="../../assets/img/Divers/ObjetAPlacer.png" alt="">
+    </button>
+    <button type="button" id="decoGauche">
+        <img id="imgDecoGauche" (click)="gauche()" [src]="chaise" alt="">
+    </button>
+    <button type="button" id="etagere">
+        <img id="imgEtagere" (click)="installeEtagere()" [src]="etagere" alt="">
+    </button>
+    <button type="button" id="decoBas">
+        <img id="imgDecoBas" (click)="bas()" src="../../assets/img/Divers/ObjetAPlacer.png" alt="">
+    </button>
+
+    <!-- Murs/Sol -->
     <span id="bas"></span>
+    <span id="fond"></span>
+    <span id="gauche"></span>
+    <span id="droite"></span>
 </div>

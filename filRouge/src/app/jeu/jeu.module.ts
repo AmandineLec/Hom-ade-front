@@ -16,6 +16,7 @@ import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.componen
 import { JeuRoutingModule } from './jeu-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaisonComponent } from '../maison/maison.component';
+import { MenuJeuComponent } from '../menu-jeu/menu-jeu.component';
 
 
 
@@ -34,7 +35,8 @@ import { MaisonComponent } from '../maison/maison.component';
     MapSudOuestComponent,
     MapOuestComponent,
     MapNordOuestComponent,
-    MaisonComponent
+    MaisonComponent,
+    MenuJeuComponent
   ],
   imports: [
     CommonModule,

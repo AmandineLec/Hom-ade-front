@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-maison',
   templateUrl: './maison.component.html',
-  styleUrls: ['./maison.component.scss']
+  styleUrls: ['./maison.component.scss'],
+  host : {'class' : 'map'}
 })
 export class MaisonComponent implements OnInit {
   cadre: string = "../../assets/img/Divers/ObjetAPlacer.png";

@@ -1,13 +1,14 @@
 .container{
-    background-image: url('../../assets/img/Background/MaisonFondVide.png'), url('../../assets/img/Background/MaisonSolVide.png'), url('../../assets/img/Background/MaisonCotesVides.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 2;
+    background-image: url('../../assets/img/Background/InterieurMaison.png');
+    background-color: #8C592A;
+    background-size: 100% 100%; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
+    grid-template-rows: repeat(12, 1fr);
     justify-items: center;
+    background-repeat: no-repeat;
 }
 
 #cadre{

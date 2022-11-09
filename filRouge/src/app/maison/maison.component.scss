@@ -2,38 +2,25 @@
     grid-column: 1 / span 12;
     grid-row: 1 / span 2;
     background-image: url('../../assets/img/Background/InterieurMaison.png');
-    background-color: #8C592A;
     background-size: 100% 100%; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     justify-items: center;
+    align-items: flex-end;
     background-repeat: no-repeat;
 }
 
 #cadre{
     background-color: transparent;
     border: 0px;
-    width: 150px;
+    width: 100px;
     grid-column: 3 / span 2;
-    grid-row: 3;
+    grid-row: 5;
 }
 #imgCadre{
     width: 100%;
-    rotate: 0.1 0.9 1 90deg;
-}
-
-#cadre2{
-    background-color: transparent;
-    border: 0px;
-    width: 150px;
-    grid-column: 10 / span 2;
-    grid-row: 3;
-    filter: contrast(50%);
-}
-#imgCadre2{
-    width: 100%;
-    rotate: 0.1 0.9 1 -90deg;
+    rotate: 0.1 0.5 0.7 90deg;
 }
 
 #imgCadre:hover, #imgCadre2:hover, #imgSol:hover{
@@ -45,8 +32,39 @@
     border: 0px;
     width: 150px;
     grid-column: 6 / span 2;
-    grid-row: 2 / span 2;
+    grid-row: 1 / span 2;
+    position: relative;
+    top: 450px; 
+    z-index: 5;
 }
 #imgSol{
     width: 100%;
 }
+
+#bas{
+    border-bottom: 375px solid #8C592A;
+    border-left  : 570px solid transparent; 
+    border-right : 570px solid transparent;
+    height : 0;
+    width  : 40%;
+    grid-column: 1 / span 12;
+    grid-row: 7 / span 6;
+    border-image-slice: 0 0 14 0;
+    z-index: 0;
+}
+#bas:after {
+    // width  : 0;
+    // height : 0;
+    // content: '';
+    // border-bottom : 50px solid green;
+    // border-right  : 20px solid transparent;
+    // border-left   : 20px solid transparent;
+    // position : absolute;
+    // top  : -50px;
+    // right: -20px;
+  }
+  #bas:hover{
+    filter: blur(2px);
+    z-index: 0;
+  }
+  

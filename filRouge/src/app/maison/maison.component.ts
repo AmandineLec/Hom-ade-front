@@ -17,14 +17,14 @@ export class MaisonComponent implements OnInit {
 
   display(e:Event){
     this.cadre = "../../assets/img/Décoration/Cadre01.png";
-    document.getElementById('cadre')!.style.gridRow = "3 / span 2";
+    document.getElementById('cadre')!.style.gridRow = "4 / span 2";
   }
   display2(e:Event){
     this.cadre2 = "../../assets/img/Décoration/Cadre01.png";
     document.getElementById('cadre')!.style.gridRow = "3 / span 2";
   }
   deco(e:Event){
-    document.getElementById('container')!.style.backgroundImage = "url('../../assets/img/Background/MaisonCarrelage.png'), url('../../assets/img/Background/MaisonSolVide.png'), url('../../assets/img/Background/MaisonPeintureBleue.png')";    
+    document.getElementById
   }
 
 

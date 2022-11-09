@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AcountComponent } from './acount/acount.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MenuComponent } from './menu/menu.component';
     RegisterComponent,
     LoginComponent,
     AcountComponent,
-    MenuComponent
+    MenuComponent,
+    MenuJeuComponent
   ],
   imports: [
     BrowserModule,

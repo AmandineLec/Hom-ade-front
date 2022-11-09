@@ -1,14 +1,13 @@
 .container{
     background-color: aqua;
     background-image: url('../../assets/img/Background/PageDroite.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    grid-column: 1/ span 12;
+    grid-row: 1/ span 1;
+    background-size: 100% 100%; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
     justify-items: center;
+    background-repeat: no-repeat;
 }
 
 button{
@@ -32,17 +31,26 @@ button{
 
 #haut{
     grid-column: 6 / span 2;
+    grid-row: 1/ span 1;
 }
 #bas{
     grid-column: 6 / span 2;
-    grid-row: 10;
+    grid-row: 5 / span 1;
+    margin-bottom: 7px;
 }
 #droite{
     grid-column: 12;
-    grid-row: 5 / span 2;
+    grid-row: 3/ span 1;
+    margin : {
+        left : 70px; 
+        top : 80px;
+    }
 }
 #gauche{
-    grid-row: 5 / span 2;
+    grid-row: 3/ span 1;
+    margin : {
+        top : 80px;
+    }
 }
 
 .imgRessources:hover{
@@ -52,21 +60,22 @@ button{
 
 #source{
     grid-column: 8 / span 4;
-    grid-row: 1 / span 10;
-    width: 80%;
+    grid-row: 1/span 5;
 }
 #imgSource{
     width: 100%;
+    height: 580px;
+    object-fit: contain;
 }
 
 #silex{
     grid-column: 1;
-    grid-row: 9 / span 2;
+    grid-row: 5/ span 1;
 }
 
 #riviere{
     grid-column: 2 / span 3;
-    grid-row: 4 / span 3;
+    grid-row: 3 / span 1;
 }
 
 #imgRiviere{
@@ -75,5 +84,5 @@ button{
 
 #truite{
     grid-column: 5 / span 3;
-    grid-row: 7 / span 2;
+    grid-row: 4 / span 1;
 }

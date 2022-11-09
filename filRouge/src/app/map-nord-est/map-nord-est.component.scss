@@ -1,14 +1,13 @@
 .container{
     background-color: aqua;
     background-image: url('../../assets/img/Background/PageHautDroite.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    grid-column: 1/ span 12;
+    grid-row: 1/ span 1;
+    background-size: 100% 100%; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
     justify-items: center;
+    background-repeat: no-repeat;
 }
 
 button{
@@ -35,14 +34,14 @@ button{
 }
 #bas{
     grid-column: 6 / span 2;
-    grid-row: 10;
+    grid-row: 6/ span 1;
 }
 #droite{
     grid-column: 12;
-    grid-row: 5 / span 2;
+    grid-row: 3 / span 2;
 }
 #gauche{
-    grid-row: 5 / span 2;
+    grid-row: 3 / span 2;
 }
 
 .imgRessources:hover{
@@ -56,18 +55,18 @@ button{
 }
 
 #plomb{
-    grid-column: 7 / span 2;
-    grid-row: 3 / span 2;
+    grid-column: 7 / span 1;
+    grid-row: 2 / span 2;
 }
 
 #fer{
     grid-column: 1 / span 2;
-    grid-row: 8 / span 2;
+    grid-row: 5 / span 1;
     width: 70%;
 }
 
 #granit{
     grid-column: 11 / span 2;
-    grid-row: 7 / span 1;
+    grid-row: 5 / span 1;
     width: 50%;
 }

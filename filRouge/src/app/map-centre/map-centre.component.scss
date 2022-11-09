@@ -5,11 +5,9 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(10, 1fr);
     background-image: url('../../assets/img/Background/PageAccueil.png');
-    background-size: cover;
+    background-size: 100% 100%; 
     background-color: aqua;
     background-repeat: no-repeat;
-    margin: auto;
-    height: 90vh;
 }
 
 .direction{
@@ -29,7 +27,7 @@
 }
 #bas{
     grid-column: 7 / span 2;
-    grid-row: 10;
+    grid-row: 10 /span 1;
 }
 #droite{
     grid-column: 13;

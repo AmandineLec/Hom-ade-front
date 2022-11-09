@@ -15,7 +15,7 @@ export class MapCentreComponent implements OnInit {
   ngOnInit(): void {
     this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(0));
     this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(1));
-    
+    this.objetsRecoltables.push(this.objRecSer.getObjetRecoltable(2));
   }
 
   recolte(index: number) {

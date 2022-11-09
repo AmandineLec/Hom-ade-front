@@ -8,7 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ObjetRecoltableService {
-  private objetRecoltableUrl = 'localhost:8080/api/';
+  private objetRecoltableUrl = 'http://localhost:8080/api/';
   objetsRecoltables: ObjetRecoltable[] = [];
 
   constructor(private http: HttpClient) { }

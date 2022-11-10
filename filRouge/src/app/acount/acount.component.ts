@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Personnage} from "../personnage";
+import{ApiService} from "../api.service";
 
 @Component({
   selector: 'app-acount',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acount.component.scss']
 })
 export class AcountComponent implements OnInit {
+  //personnage!: Personnage;
 
-  constructor() { }
+
+  constructor(private api : ApiService) { }
 
   ngOnInit(): void {
+    this.api.getPersonnageInfos().subscribe((perso) => {
+      if(this.api.isPersonnage(perso))
+      console.log("coucou");
+    })
+
+
   }
+
 
 }

@@ -13,6 +13,9 @@
   h2{
     margin-left: 80px;
   }
+  img{
+    width: 60px;
+  }
 }
 .subscribe{
   input {
@@ -30,4 +33,7 @@
     margin-bottom: 20px;
   }
 
+}
+#gender{
+  display: flex;
 }

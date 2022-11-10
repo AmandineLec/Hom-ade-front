@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Personnage} from "../personnage";
 import{ApiService} from "../api.service";
 import { FormBuilder } from '@angular/forms';
-import {HttpHeaders, HttpParams} from "@angular/common/http";
+
 
 
 @Component({
@@ -20,9 +20,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.submitted=false;
-    /*this.api.getPersonnages().subscribe(data =>{
-      this.persos = data;
-    })*/
   }
   persoForm = this.formbuilder.group({
       mail: ['',Validators.required],
@@ -45,5 +42,6 @@ export class RegisterComponent implements OnInit {
       this.submitted = true;
     })
     console.warn(this.personnage.value);
+    this.api.redirectTologin();
   }
 }

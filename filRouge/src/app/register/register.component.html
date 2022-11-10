@@ -5,10 +5,16 @@
       <div>
         <label for="name">Nom :</label><br>
         <input type="text" name="name" id="name" formControlName="name"  required>
-      </div>
-      <div>
-        <label for="sexe">Sexe:</label><br>
-        <input type="text" name="sexe" id="sexe" formControlName="sexe" required>
+      </div><br>
+      <div id="gender">
+        <span>Genre :</span><br>
+        <label for="masculin"><img src="./assets/img/Avatar/homme.png" alt="avatar homme"></label><br>
+        <span>Masculin</span>
+        <input type="radio" name="sexe" id="masculin" value="1" formControlName="sexe" required>
+
+        <label for="feminin"><img src="./assets/img/Avatar/femme.png"  alt="avatar femme"></label><br>
+        <span>Féminin</span>
+        <input type="radio" name="sexe"  id="feminin" value="2" formControlName="sexe" required>
       </div>
       <div>
         <label for="mail">E-mail :</label><br>
@@ -21,6 +27,7 @@
       </div>
       <div id="subscription">
         <input  type="submit" value="S'inscrire!">
+        <a routerLink='/login'></a>
       </div>
     </form>
   </div>

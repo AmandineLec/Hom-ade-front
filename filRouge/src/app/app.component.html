@@ -1,3 +1,9 @@
 <app-menu (jouer)="play()" id="app-menu"></app-menu>
+<button id="params" (click)="openModal('parametres')"></button>
 <router-outlet></router-outlet>
 <app-menu-jeu></app-menu-jeu>
+
+<jw-modal id="parametres">
+    <app-parametres></app-parametres>
+    <button id="closeParams" (click)="closeModal('parametres')"></button>
+</jw-modal>

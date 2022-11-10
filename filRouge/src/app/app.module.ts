@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { AcountComponent } from './acount/acount.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
+import { ParametresComponent } from './parametres/parametres.component';
+import { ModalModule } from './_modal';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
     LoginComponent,
     AcountComponent,
     MenuComponent,
-    MenuJeuComponent
+    MenuJeuComponent,
+    ParametresComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

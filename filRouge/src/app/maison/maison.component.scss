@@ -12,9 +12,13 @@
     z-index: 0;
 }
 
+img{
+    filter: contrast(70%);
+    filter: opacity(0.5);
+}
 // Gestion Hover Buttons
 img:hover{
-    filter: contrast(20%);
+    filter: contrast(50%);
 }
 
 // Buttons
@@ -29,21 +33,20 @@ img:hover{
 }
 #imgCadre{
     width: 100%;
-    rotate: 0.1 0.5 0.6 85deg;
+    rotate: 0.1 0.5 0.6 90deg;
 }
 
-#etagere{
+#chaise{
     background-color: transparent;
     border: 0px;
-    width: 100px;
-    grid-column: 10 / span 2;
-    grid-row: 6;
+    width: 130px;
+    grid-column: 7 / span 2;
+    grid-row: 9 / span 2;
     position: relative;
     z-index: 5;  
 }
-#imgEtagere{
+#imgChaise{
     width: 100%;
-    rotate: 0.1 0.6 0.8 -85deg;
 }
 
 #table{
@@ -52,12 +55,25 @@ img:hover{
     width: 150px;
     height: 100px;
     grid-column: 6 / span 2;
-    grid-row: 8 / span 2;
+    grid-row: 9 / span 2;
     position: relative;
-    z-index: 10;
+    z-index: 50;
     
 }
 #imgTable{
+    width: 100%;
+}
+
+#toilettes{
+    background-color: transparent;
+    border: 0px;
+    width: 100px;
+    grid-column: 6 / span 2;
+    grid-row: 6 / span 2;
+    position: relative;
+    z-index: 5;  
+}
+#imgToilettes{
     width: 100%;
 }
 
@@ -75,20 +91,19 @@ img:hover{
     rotate: 0 3 0 30deg;
 }
 
-#decoGauche{
+#etagere{
     background-color: transparent;
     border: 0px;
-    width: 50px;
-    grid-column: 1 / span 1;
-    grid-row: 11 / span 1;
+    width: 100px;
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
     position: relative;
     z-index: 5;  
 }
-#imgDecoGauche{
+#imgEtagere{
     width: 100%;
-    rotate: 0 3 0 30deg;
+    rotate: 0.1 0.5 0.6 90deg;
 }
-
 
 #decoBas{
     background-color: transparent;
@@ -130,7 +145,7 @@ img:hover{
     align-self: center;
     justify-self: flex-start;
     border-bottom: 372px solid transparent ;
-    border-left : 576px solid #fac18c;
+    border-left : 576px solid #ffdcbc;
     height : 100%;
     width  : 0;
     grid-column: 1 / span 4;
@@ -146,7 +161,7 @@ img:hover{
     align-self: center;
     justify-self: flex-start;
     border-bottom: 372px solid transparent ;
-    border-right : 576px solid #fac18c;
+    border-right : 576px solid #ffdcbc;
     height : 100%;
     width  : 0;
     grid-column: 10 / span 4;

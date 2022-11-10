@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParametresComponent } from '../parametres/parametres.component';
 import { RecettesComponent } from '../recettes/recettes.component';
 import { CarteComponent } from '../carte/carte.component';
 import { InventaireComponent } from '../inventaire/inventaire.component';
@@ -21,7 +20,6 @@ import { MaisonComponent } from '../maison/maison.component';
 
 @NgModule({
   declarations: [
-    ParametresComponent,
     RecettesComponent,
     CarteComponent,
     InventaireComponent,

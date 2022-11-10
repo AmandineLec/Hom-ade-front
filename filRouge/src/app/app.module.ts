@@ -24,7 +24,7 @@ import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

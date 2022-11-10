@@ -1,15 +1,11 @@
-<!-- <div id="modalRecette" class="modalRecette">
-    <form th:action="@{/recetteOutils}">
-        <button class="modalRecette__buttons" id="modalRecette__buttons">Outils</button>
-    </form>
-    <form th:action="@{/recetteMeubles}">
-        <button class="modalRecette__buttons" id="modalRecette__buttons">Meubles</button>
-    </form>
-    <form th:action="@{/recetteDecos}">
-        <button class="modalRecette__buttons" id="modalRecette__buttons">Décorations</button>
-    </form>  
+<div id="modalRecette" class="modalRecette">
 
-    <div th:fragment="recetteOutils" id="modalOutils" class="modalRecette__onglet">
+    <div id="modalOutils" class="modalRecette__onglet">
+        <article *ngFor = "let objet of objets">
+            <h2>{{objet.nom}}</h2>
+        </article>
+    </div>
+    <!-- <div th:fragment="recetteOutils" >
         <article th:each="outil : ${outils}">
             <h2 th:text="${outil.nom}">Nom de l'outil</h2>
             <div th:each="recette : ${outil.recette}">
@@ -17,8 +13,8 @@
             </div>
             <a th:href="@{singleRecette(id=${outil.id})}">Voir recette</a>
         </article>
-    </div>
-
+    </div> -->
+<!-- 
     <div th:fragment="recetteMeubles" id="modalMeuble" class="modalRecette__onglet">
         <article th:each="meuble : ${meubles}">
             <h2 th:text="${meuble.nom}"></h2>
@@ -37,5 +33,5 @@
             </div>
             <a th:href="@{singleRecette(id=${deco.id})}">Voir recette</a>
         </article>
-    </div>
-</div> -->
+    </div> -->
+</div>

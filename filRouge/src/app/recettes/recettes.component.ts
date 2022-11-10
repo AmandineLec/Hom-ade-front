@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Objet } from '../interface/objet';
 import { Recette } from '../interface/recette';
 import { RecetteService } from '../service/recette.service';
 
@@ -8,14 +9,13 @@ import { RecetteService } from '../service/recette.service';
   styleUrls: ['./recettes.component.scss']
 })
 export class RecettesComponent implements OnInit {
-  recettes :Recette[] = [];
+  objets :Objet[] = [];
   
   constructor(private recetteService :RecetteService) { }
 
   ngOnInit(): void {
     this.recetteService.getRecette().subscribe(recetteFromService => 
-      this.recettes = recetteFromService);
-      console.log(this.recettes);
+      this.objets = recetteFromService);
   }
 
 }

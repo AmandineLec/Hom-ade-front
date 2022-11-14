@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { AcountComponent } from './acount/acount.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
+import { OutilsComponent } from './outils/outils.component';
+import { MeubleComponent } from './meuble/meuble.component';
+import { DecoComponent } from './deco/deco.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
     LoginComponent,
     AcountComponent,
     MenuComponent,
-    MenuJeuComponent
+    MenuJeuComponent,
+    OutilsComponent,
+    MeubleComponent,
+    DecoComponent
   ],
   imports: [
     BrowserModule,

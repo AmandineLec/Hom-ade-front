@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,  HttpHeaders } from '@angular/common/http';
-import { Recette } from '../interface/recette';
 import { Observable } from 'rxjs';
 import { Objet } from '../interface/objet';
 
@@ -10,24 +9,22 @@ import { Objet } from '../interface/objet';
 export class RecetteService {
 
   objet :Objet[] = []; 
-  recetteUrl ="http://localhost:8080/api/recetteOutils";
+  outilsUrl ="http://localhost:8080/api/recetteOutils";
+  meublesUrl = "http://localhost:8080/api/recetteMeubles";
+  decosUrl = "http://localhost:8080/api/recetteDecos"; 
   constructor( private httpClient :HttpClient) { }
 
-  getRecette() :Observable<Objet[]> {
-    return this.httpClient.get<Objet[]>(this.recetteUrl); 
+  getOutils() :Observable<Objet[]> {
+    return this.httpClient.get<Objet[]>(this.outilsUrl); 
   }
 
-  add(recette :Objet) {
-    this.objet.push(recette);
+  getMeubles() :Observable<Objet[]>{
+    return this.httpClient.get<Objet[]>(this.meublesUrl);
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/x-www-form-urlencoded',
-    })
-  };
-  // remove(id :number){
-  //   this.recettes = this.recettes.filter(x=>x.id !==id);
-  // }
+  getDecos() :Observable<Objet[]>{
+    return this.httpClient.get<Objet[]>(this.decosUrl);
+  }
+
 
 }

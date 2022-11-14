@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParametresComponent } from '../parametres/parametres.component';
 import { RecettesComponent } from '../recettes/recettes.component';
 import { CarteComponent } from '../carte/carte.component';
 import { InventaireComponent } from '../inventaire/inventaire.component';
@@ -15,12 +14,12 @@ import { MapOuestComponent } from '../map-ouest/map-ouest.component';
 import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.component';
 import { JeuRoutingModule } from './jeu-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MaisonComponent } from '../maison/maison.component';
 
 
 
 @NgModule({
   declarations: [
-    ParametresComponent,
     RecettesComponent,
     CarteComponent,
     InventaireComponent,
@@ -32,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     MapSudComponent,
     MapSudOuestComponent,
     MapOuestComponent,
-    MapNordOuestComponent
+    MapNordOuestComponent,
+    MaisonComponent
   ],
   imports: [
     CommonModule,

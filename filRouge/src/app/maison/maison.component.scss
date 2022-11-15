@@ -12,12 +12,34 @@
     z-index: 0;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
+#imgDirection{
+    width: 100%;
+    filter: opacity(150%)
+}
+
+#sortie{
+    grid-column: 1;
+    grid-row: 9 / span 2;
+    justify-self: flex-start;
+    align-self: center;
+    width: 120px;
+    // filter: contrast(50%);
+    justify-items: center;
+    align-items: center;
+    z-index: 500;
+}
+
 img{
-    filter: contrast(70%);
-    filter: opacity(0.5);
+    filter: contrast(80%);
+    filter: opacity(0.8);
 }
 // Gestion Hover Buttons
-img:hover{
+img:hover, #imgDirection:hover{
     filter: contrast(50%);
 }
 
@@ -168,3 +190,4 @@ img:hover{
     grid-row: 1 / span 9;
     z-index: -200;
 }
+

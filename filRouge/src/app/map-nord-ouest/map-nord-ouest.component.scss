@@ -5,6 +5,7 @@
     grid-row: 1/ span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     justify-items: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -31,19 +32,29 @@ button{
 
 #haut{
     grid-column: 6 / span 1;
-    grid-row : 1/ span 1; 
+    grid-row : 1/ span 1;
+    align-self: flex-start;
+    justify-self: center;
 }
 #bas{
-    grid-column: 6 / span 1;
+    grid-column: 6 / span 2;
     grid-row: 5/ span 1;
+    align-self: flex-end;
+    justify-self: center;
+
 }
 #droite{
     grid-column: 12 / span 1;
     grid-row: 3/ span 1;
+    align-self: center;
+    justify-self: flex-end;
 }
 #gauche{
     grid-column: 1/ span 1;
     grid-row: 3/ span 1;
+    align-self: center;
+    justify-self: flex-start;
+
 }
 
 .imgRessources:hover{
@@ -62,7 +73,12 @@ button{
 
 #brique{
     grid-column: 1 / span 3;
-    grid-row: 1/ span 2;
+    grid-row: 1/ span 4;
+    width: 250px;
+}
+
+#imgBrique{
+    width: 100%;
 }
 
 #carpe{

@@ -8,6 +8,7 @@ import { ModalService } from './_modal';
 })
 export class AppComponent {
   title = 'filRouge';
+
   constructor(private modalService : ModalService){}
   ngOnInit() {
   }
@@ -19,6 +20,7 @@ export class AppComponent {
   closeModal(id: string) {
       this.modalService.close(id);
   }
+
   
   play(){
     document.getElementById("app-menu")!.style.display = "none";

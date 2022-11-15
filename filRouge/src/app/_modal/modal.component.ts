@@ -3,10 +3,8 @@
 import { ModalService } from './modal.service';
 
 @Component({ 
-    selector: 'jw-modal', 
+    selector: 'jw-modal, parametres', 
     templateUrl: 'modal.component.html', 
-    styleUrls: ['modal.component.less'],
-    encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit, OnDestroy {
     @Input() id: string = "";
@@ -45,7 +43,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
     // open modal
     open(): void {
-        this.element.style.display = 'block';
+        this.element.style.display = 'grid';
         document.body.classList.add('jw-modal-open');
     }
 

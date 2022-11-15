@@ -29,6 +29,7 @@ app-menu-jeu{
     z-index : 150;
     justify-self: flex-end;
     border-radius: 50%;
+    border: #EEAB00 2px solid;
 }
 
 // jw-modal{
@@ -51,3 +52,37 @@ app-menu-jeu{
     box-shadow:0 0 10px 3px rgba(0,0,0,0.5);
 }
 
+parametres{
+    display: none;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: fixed;
+    top: 6%;
+    right: 0;
+    // bottom: 70%;
+    // left: 82%;
+
+    z-index: 1000;
+    
+    overflow: hidden;
+    padding: 20px;
+    background: #643F1D;
+    width: 250px;
+    height: 15%;
+    border: #EEAB00 3px solid;
+}
+
+#closeParams{
+    align-self: flex-start;
+    justify-self: flex-end;
+    grid-column: 4;
+    grid-row: 1;
+}
+
+app-parametres{
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+}

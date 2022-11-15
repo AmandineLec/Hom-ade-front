@@ -3,7 +3,8 @@
 <router-outlet></router-outlet>
 <app-menu-jeu></app-menu-jeu>
 
-<jw-modal id="parametres">
-    <app-parametres></app-parametres>
+<parametres id="parametres">
     <button id="closeParams" (click)="closeModal('parametres')"><img id="imgClose" src="../assets/img/Divers/Close.png" alt=""></button>
-</jw-modal>
+    <br>
+    <app-parametres></app-parametres>
+</parametres>

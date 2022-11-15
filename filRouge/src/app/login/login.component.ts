@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  submitted = false;
 
   constructor(private api : ApiService) { }
   personnage : FormGroup = new FormGroup({
@@ -18,11 +19,16 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.submitted=false;
   }
   onSubmit() {
-    this.api.login(this.personnage.value).subscribe((perso) => {
-      if(this.api.isPersonnage(perso))
-        console.warn(this.personnage.value);
+    // perso bien enrégsitré en bdd mais lors de la connection affiche "id incorrects"
+    this.api.login(this.personnage.value as Personnage).subscribe((perso) => {
+      console.warn(this.personnage.value);
+      if(this.api.isPersonnage(perso)){
+        this.submitted = true;
+      }
+      console.warn(this.personnage.value);
       this.api.redirectToAccount();
     })
   }

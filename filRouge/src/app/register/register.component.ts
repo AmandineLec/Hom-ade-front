@@ -21,12 +21,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.submitted=false;
   }
+  /* trouver comment obtenir les valeurs des champs
   persoForm = this.formbuilder.group({
       mail: ['',Validators.required],
       nom: ['',Validators.required],
       genre: ['',Validators.required],
       password: ['',Validators.required]
   });
+  */
 
   personnage : FormGroup = new FormGroup({
     name:new FormControl('' , [Validators.required]),
@@ -38,10 +40,12 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.api.register(this.personnage.value).subscribe((perso) => {
-      if(this.api.isPersonnage(perso))
-      this.submitted = true;
+      if(this.api.isPersonnage(perso)){
+        this.submitted = true;
+        console.warn(this.personnage.value);
+      }
     })
-    console.warn(this.personnage.value);
     this.api.redirectTologin();
+
   }
 }

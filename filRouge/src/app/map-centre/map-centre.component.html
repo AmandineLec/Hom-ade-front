@@ -11,7 +11,7 @@
 
     <div *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
         <button id="arbre" (click)="recolte(0)">
-            <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" />
+            <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Sequoia.png" />
         </button>
     </div>
     <ng-template #elseBlock>
@@ -19,8 +19,8 @@
     </ng-template>
 
     <button id="poisson" (click)="recolte(1)"><img class="imgRessources"
-            src="../../assets/img/Ressources/Recoltable/Poisson/Sardine.png" /> </button>
+            src="../../assets/img/Ressources/Sardine.png" /> </button>
 
-    <button id="silex" (click)="recolte(2)"><img class="imgRessources" src="../../assets/img/Ressources/Ramassable/Silex.png" /> </button>
+    <button id="silex" (click)="recolte(2)"><img class="imgRessources" src="../../assets/img/Ressources/Silex.png" /> </button>
 
 </div>

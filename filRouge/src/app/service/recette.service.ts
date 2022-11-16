@@ -12,6 +12,8 @@ export class RecetteService {
   outilsUrl ="http://localhost:8080/api/recetteOutils";
   meublesUrl = "http://localhost:8080/api/recetteMeubles";
   decosUrl = "http://localhost:8080/api/recetteDecos"; 
+  objetUrl = "http://localhost:8080/api/recettes?id=";
+
   constructor( private httpClient :HttpClient) { }
 
   getOutils() :Observable<Objet[]> {
@@ -26,5 +28,8 @@ export class RecetteService {
     return this.httpClient.get<Objet[]>(this.decosUrl);
   }
 
-
+  
+  getObjet(id:number) :Observable<Objet>{
+    return this.httpClient.get<Objet>(this.objetUrl + id);
+  }
 }

@@ -1,6 +1,16 @@
+<div class="outil">
+    <article class="outil__article" *ngFor="let outil of outils">
+        <h2 class="outil__title">{{outil.nom}}</h2>
+        <img class="outil__img" src="../../assets/img/Objets/{{outil.img}}" alt="{{outil.nom}}">
+        <div class="outil__recette" *ngFor="let recette of outil.recettes">
+            <img class="outil__ressource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+            <p class="outil__quantite">x{{recette.quantite_necessaire}}</p>
+        </div>
+        <button id="outil__button" class="outil__button" (click)="openModal('singleRecette' + outil.id)">Voir la recette</button>
+    </article>
+</div>
 
-    <div id="modalOutils" class="modalRecette__onglet">
-        <article *ngFor = "let outil of outils">
-            <h2>{{outil.nom}}</h2>
-        </article>
-    </div>
+<singleRecette class="singleRecette" id="singleRecette{{outil.id}}" *ngFor="let outil of outils">
+    <app-single-recette [objet]="outil"></app-single-recette>
+    <button class="singleRecette__button" (click)="closeModal('singleRecette' + outil.id)">X</button>
+</singleRecette>

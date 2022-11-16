@@ -1,1 +1,10 @@
-<p>deco works!</p>
+<div class="deco">
+    <article class="deco__article" *ngFor="let deco of decos">
+        <h2 class="deco__title">{{deco.nom}}</h2>
+        <img class="deco__img" src="../../assets/img/Objets/{{deco.img}}" alt="{{deco.nom}}">
+        <div class="deco__recette" *ngFor="let recette of deco.recettes">
+            <img class="deco__ressource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+            <p class="deco__quantite">x{{recette.quantite_necessaire}}</p>
+        </div>
+    </article>
+</div>

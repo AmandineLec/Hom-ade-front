@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecettesComponent } from '../recettes/recettes.component';
 import { CarteComponent } from '../carte/carte.component';
-import { InventaireComponent } from '../inventaire/inventaire.component';
 import { MapCentreComponent } from '../map-centre/map-centre.component';
 import { MapNordComponent } from '../map-nord/map-nord.component';
 import { MapNordEstComponent } from '../map-nord-est/map-nord-est.component';
@@ -18,11 +16,10 @@ import { MaisonComponent } from '../maison/maison.component';
 
 
 
+
 @NgModule({
   declarations: [
-    RecettesComponent,
     CarteComponent,
-    InventaireComponent,
     MapCentreComponent,
     MapNordComponent,
     MapNordEstComponent,
@@ -32,12 +29,12 @@ import { MaisonComponent } from '../maison/maison.component';
     MapSudOuestComponent,
     MapOuestComponent,
     MapNordOuestComponent,
-    MaisonComponent
+    MaisonComponent,
   ],
   imports: [
     CommonModule,
     JeuRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class JeuModule { }

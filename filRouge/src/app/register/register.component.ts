@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Personnage} from "../personnage";
-import{ApiService} from "../api.service";
 import { FormBuilder } from '@angular/forms';
+import { ApiService } from '../service/api.service';
 
 
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  host: {'class' : 'outlet'}
 })
 export class RegisterComponent implements OnInit {
   constructor(private api : ApiService, private formbuilder: FormBuilder) { }

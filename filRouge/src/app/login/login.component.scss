@@ -1,38 +1,60 @@
-#mainDiv{
-  color: #F5F5F5;
-  display:flex;
-  justify-content: center;
-  margin-top: 30px;
-}
 #box{
   background-color: #8C592A;
-  border-color: #99B800;
+  border: #99B800 5px solid;
   border-style: solid;
-  padding-left: 10px;
-  padding-right: 120px;
-  h2{
-    margin-left: 80px;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  align-items:center;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+  color: #F5F5F5;
 }
 
-a:link {
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+
+#divReg{
+  font-size: small;
+}
+
+#register{
   color: #F5F5F5;
   text-decoration: none;
 }
-.login{
-  input {
-    background-color: #F5F5F5;
-  }
+
+#register:hover{
+  color: #99B800;
 }
-#login{
+
+div{
+  margin: 10px;
+  padding: 5px;
+}
+
+input, button{
+  background-color: #F5F5F5;
+  border: 0;
+  height: 1.5rem;
+  width: 200px;
   margin-top: 10px;
-  margin-left: 80px;
-
-  input{
-    color: #F5F5F5;
-    background-color: #99B800;
-    width: 120px;
-    margin-bottom: 20px;
-  }
-
+  border-radius: 20px;
+  padding: 2px 10px;
 }
+
+#submit{
+  color: #F5F5F5;
+  background-color: #99B800;
+  height: 2rem;
+  font-size: larger;
+}
+
+span{
+  margin-right: 5px;
+}
+

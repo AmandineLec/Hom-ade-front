@@ -10,6 +10,7 @@ import { ApiService } from '../service/api.service';
   host : {'class' : 'menu'}
 })
 export class MenuComponent implements OnInit {
+  authenticated = this.apiService.authenticated;
   @Output() jouer = new EventEmitter<boolean>();
   constructor(private apiService: ApiService, private http: HttpClient, private router: Router){
     this.apiService.authenticate(undefined, undefined);
@@ -18,11 +19,10 @@ export class MenuComponent implements OnInit {
   logout(){
     this.http.post('logout', {}).subscribe(() => {
       this.apiService.authenticated = false;
-      this.router.navigateByUrl('/login');
+      console.log('déconnecté')
     })
   }
 
-  authenticated() { return this.apiService.authenticated; }
 
   ngOnInit(): void {
   }

@@ -4,9 +4,10 @@
     <span>Nom du Jeu</span>
     <ul>
       <li><a routerLink='/register'>Inscription</a></li>
-      <li><a routerLink='/login'>Connection</a></li>
+      <li><a routerLink='/login'>Connexion</a></li>
       <li><a routerLink='/acount'>Données du compte</a></li>
-      <li type="button" ><a routerLink='/jeu/c' (click)="play(true)">Jouer</a></li>
+      <li><a (click)="logout()" [hidden]="authenticated()">Déconnexion</a></li>
+      <li [hidden]="!authenticated()" type="button" ><a routerLink='/jeu/c' (click)="play(true)">Jouer</a></li>
     </ul>
   </nav>
 </div>

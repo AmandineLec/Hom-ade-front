@@ -1,5 +1,5 @@
 export interface Personnage {
-  id: number;
+  id?: number;
   name: string;
   sexe: string;
   mail: string;

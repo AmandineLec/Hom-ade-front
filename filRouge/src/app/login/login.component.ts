@@ -13,8 +13,8 @@ import {HttpClient} from "@angular/common/http";
 export class LoginComponent implements OnInit {
   submitted = false;
 
-  constructor(private api : ApiService, private http: HttpClient) {
-    http.get('')
+  constructor(private api : ApiService) {
+
   }
   personnage : FormGroup = new FormGroup({
     mail:new FormControl('',[Validators.required]),
@@ -26,14 +26,17 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     // perso bien enrégsitré en bdd mais lors de la connection affiche "id incorrects"
-    this.api.login(this.personnage.value).subscribe((perso) => {
-      console.warn(this.personnage.value);
-      if(this.api.isPersonnage(perso)){
-        this.submitted = true;
-      }
-      console.warn(this.personnage.value);
-      this.api.redirectToAccount();
-    })
+    this.api.login(this.personnage.value).subscribe(response => {
+        if (this.api.isPersonnage(response)) {
+          this.api.authStatus.logged = true;
+          this.api.authStatus.personnage = response;
+          this.api.authenticate();
+        }
+    },
+    (error) => {
+      console.warn("AAAAAAAAH C'EST PAS LE BON LOGIN");
+      // Ici traiter les erreurs de connexion
+    });
 
   //this.api.test();
   }

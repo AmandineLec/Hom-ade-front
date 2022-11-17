@@ -6,6 +6,7 @@ import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
 import {LogStatus} from "./log-status";
 import { map } from 'rxjs/operators';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { AuthStatus } from './auth-status';
 
 
 
@@ -15,37 +16,31 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 // this service will perform GET and POST requests to the http://localhost:8080/inscription endpoint.
 export class ApiService  {
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
-  authenticated = false;
+
   private inscription = 'http://localhost:8080/inscription';
-  private connection = 'http://localhost:8080/login';
+  private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
-  private deconnection = 'http://localhost:8080/accueil_connexion';
-  //private body = `mail=${this.personnage.value.mail}&password=${this.personnage.value.password}`;
+  private deconnection = 'http://localhost:8080/logout';
 
-  authenticate(credentials: any, callback: any) {
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
-    const headers = new HttpHeaders(credentials ? {
-      authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+  authStatus : AuthStatus = {
+    logged : false
+  };
+
+
+  authenticate() : void {
+    const headers = new HttpHeaders(this.authStatus.logged ? {
+      authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
     } : {});
 
-    this.http.get('user', {headers: headers}).subscribe(response => {
-      if (response) {
-        this.authenticated = true;
-      } else {
-        this.authenticated = false;
-      }
-      return callback && callback();
-    });
+    this.http.get<Personnage>(this.account+'api/recetteOutils', {withCredentials : true, headers : headers}).subscribe()
 
   }
 
-  personnage : FormGroup = new FormGroup({
-    mail:new FormControl('',[Validators.required]),
-    password:new FormControl('',[Validators.required])
-  });
-
-
+  isPersonnage(perso : any) : perso is Personnage{
+    return "mail" in perso;
+  }
   /*https://www.journaldunet.fr/web-tech/developpement/1441195-behaviorsubject-vs-observable/#:~:text=Les%20classes%20%22Subject%22%20et%20%22,utilis%C3%A9s%20par%20le%20framework%20Angular.
   https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
   private personnageActuel = new BehaviorSubject<LogStatus>({
@@ -66,10 +61,7 @@ export class ApiService  {
   //https://weblog.west-wind.com/posts/2019/Apr/07/Creating-a-custom-HttpInterceptor-to-handle-withCredentials
   // https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
   login(personnage: Personnage): Observable<Personnage>{
-  return this.http.post<Personnage>(this.connection,{
-    name: personnage.mail,
-    password: personnage.password
-  },{withCredentials : true}); // withCredentials : true  pour que l'appel utilise les cookies. Peut être stocker les infos du perso ?
+    return this.http.post<Personnage>(this.connection, personnage, {withCredentials : true});
   }
 
  /*test(){
@@ -92,25 +84,9 @@ export class ApiService  {
   }
 
 
-   isPersonnage(obj : any): obj is Personnage{
-    return "mail" in obj;
-  }
-
   logout() : Observable<Personnage>{
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
 
-  /*setAuthStatus(auth : LogStatus){
-    this.personnageActuel.next(auth);
-  }
-
-  getCurrentUser() : LogStatus{
-    return this.personnageActuel.value;
-  }
-  isConnected() : boolean {
-    return this.personnageActuel.value.logged;
-  }
-
-   */
 
 }

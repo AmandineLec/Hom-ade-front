@@ -18,6 +18,7 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { ModalModule } from './_modal';
 import { InventaireComponent } from './inventaire/inventaire.component';
 import { SingleRecetteComponent } from './single-recette/single-recette.component';
+import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -36,12 +37,14 @@ import { SingleRecetteComponent } from './single-recette/single-recette.componen
     InventaireComponent,
     SingleRecetteComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
     HttpClientModule,
     ModalModule,
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

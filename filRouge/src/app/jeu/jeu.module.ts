@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuJeuComponent } from '../menu-jeu/menu-jeu.component';
-import { ParametresComponent } from '../parametres/parametres.component';
-import { RecettesComponent } from '../recettes/recettes.component';
 import { CarteComponent } from '../carte/carte.component';
-import { InventaireComponent } from '../inventaire/inventaire.component';
 import { MapCentreComponent } from '../map-centre/map-centre.component';
 import { MapNordComponent } from '../map-nord/map-nord.component';
 import { MapNordEstComponent } from '../map-nord-est/map-nord-est.component';
@@ -15,16 +11,15 @@ import { MapSudOuestComponent } from '../map-sud-ouest/map-sud-ouest.component';
 import { MapOuestComponent } from '../map-ouest/map-ouest.component';
 import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.component';
 import { JeuRoutingModule } from './jeu-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MaisonComponent } from '../maison/maison.component';
+
 
 
 
 @NgModule({
   declarations: [
-    MenuJeuComponent,
-    ParametresComponent,
-    RecettesComponent,
     CarteComponent,
-    InventaireComponent,
     MapCentreComponent,
     MapNordComponent,
     MapNordEstComponent,
@@ -33,11 +28,13 @@ import { JeuRoutingModule } from './jeu-routing.module';
     MapSudComponent,
     MapSudOuestComponent,
     MapOuestComponent,
-    MapNordOuestComponent
+    MapNordOuestComponent,
+    MaisonComponent,
   ],
   imports: [
     CommonModule,
-    JeuRoutingModule
+    JeuRoutingModule, 
+    HttpClientModule,
   ]
 })
 export class JeuModule { }

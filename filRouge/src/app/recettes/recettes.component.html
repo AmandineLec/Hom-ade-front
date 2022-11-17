@@ -1,1 +1,26 @@
-<p>recettes works!</p>
+<div id="modalRecette" class="modalRecette">
+    <div class="modalRecette__buttons">
+        <button class="modalRecette__button" (click)="modalRecette__button=1">Outils</button>
+        <button class="modalRecette__button" (click)="modalRecette__button=2">Meubles</button>
+        <button class="modalRecette__button" (click)="modalRecette__button=3">Decos</button>
+    </div>
+    
+
+    <div [ngSwitch]="modalRecette__button">
+        <div *ngSwitchCase="1">
+            <app-outils></app-outils>
+        </div>
+        <div *ngSwitchCase="2">
+            <app-meuble></app-meuble>
+        </div>
+        <div *ngSwitchCase="3">
+            <app-deco></app-deco>
+        </div>
+
+</div>
+
+
+
+
+
+

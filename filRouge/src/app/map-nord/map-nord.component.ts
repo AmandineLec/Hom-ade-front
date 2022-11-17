@@ -5,7 +5,8 @@ import { ObjetRecoltableService } from '../service/objet-recoltable.service';
 @Component({
   selector: 'app-map-nord',
   templateUrl: './map-nord.component.html',
-  styleUrls: ['./map-nord.component.scss']
+  styleUrls: ['./map-nord.component.scss'],
+  host : {'class' : 'map'}
 })
 export class MapNordComponent implements OnInit {
   objetsRecoltables: ObjetRecoltable[] = [];

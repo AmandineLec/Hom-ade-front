@@ -11,6 +11,7 @@ import { MapSudComponent } from '../map-sud/map-sud.component';
 import { MapSudOuestComponent } from '../map-sud-ouest/map-sud-ouest.component';
 import { MapOuestComponent } from '../map-ouest/map-ouest.component';
 import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.component';
+import { MaisonComponent } from '../maison/maison.component';
 
 const routes: Routes = [
   {path: 'c', component: MapCentreComponent},
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path: 's', component: MapSudComponent},
   {path: 'so', component: MapSudOuestComponent},
   {path: 'o', component: MapOuestComponent},
-  {path: 'no', component: MapNordOuestComponent}
+  {path: 'no', component: MapNordOuestComponent},
+  {path: 'menu', component: MenuJeuComponent},
+  {path: 'maison', component: MaisonComponent}
 ];
 
 

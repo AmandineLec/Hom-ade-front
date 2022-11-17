@@ -1,14 +1,13 @@
 .container{
-    background-color: aqua;
     background-image: url('../../assets/img/Background/PageBasDroite.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    background-size: 100% 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
+    grid-template-rows: repeat(6, 1fr);
     justify-items: center;
+    background-repeat: no-repeat;
+    grid-column: 1/ span 12;
+    grid-row: 1 / span 2;
 }
 
 button{
@@ -21,6 +20,7 @@ button{
 .direction{
     width: 50px;
     filter: contrast(50%);
+    height : 50px; 
 }
 
 .imgDirection{
@@ -32,17 +32,23 @@ button{
 
 #haut{
     grid-column: 6 / span 2;
+    grid-row: 1/ span 1;
+    justify-self: center;
+    align-self: flex-start;
 }
 #bas{
     grid-column: 6 / span 2;
-    grid-row: 10;
+    grid-row: 6/ span 1;
+    margin-top: 45px;
 }
 #droite{
     grid-column: 12;
-    grid-row: 5 / span 2;
+    grid-row: 4 / span 1;
 }
 #gauche{
-    grid-row: 5 / span 2;
+    grid-row: 3 / span 2;
+    justify-self: flex-start;
+    align-self: center;
 }
 
 .imgRessources:hover{
@@ -61,8 +67,11 @@ button{
 }
 
 #jute{
-    grid-column: 7 / span 2;
-    grid-row: 9 / span 3;
+    grid-column: 6 / span 2;
+    grid-row: 5/ span 2;
+}
+#imgJute{
+    width: 100%;
 }
 
 #brochet{

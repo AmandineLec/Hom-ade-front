@@ -1,1 +1,32 @@
-<p>inventaire works!</p>
+
+<div>
+    <!-- <div class="modalInventaire__buttons">
+        <button class="modalInventaire__button" (click)="inventaire=1">Ressources</button>
+        <button class="modalInventaire__button" (click)="inventaire=2">Outils</button>
+        <button class="modalInventaire__button" (click)="inventaire=3">Meubles</button>
+        <button class="modalInventaire__button" (click)="inventaire=4">Decos</button>
+    </div> -->
+
+    <article>
+        <p>{{inventaireRessource | json}}</p>
+    </article>
+
+    <div [ngSwitch]="inventaire">
+        <div *ngSwitchCase="1">
+            <article>
+                <p>{{inventaireRessource | json}}</p>
+                <!-- <img src="../../assets/img/Ressources/{{inventaireRessource.ressource.img}}" alt="">
+                <p>{{inventaireRessource.quantite}}</p> -->
+            </article>
+        </div>
+        <div *ngSwitchCase="2">
+
+        </div>
+        <div *ngSwitchCase="3">
+
+        </div>
+        <div *ngSwitchCase="3">
+
+        </div>
+</div>
+

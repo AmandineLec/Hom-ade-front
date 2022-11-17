@@ -1,14 +1,14 @@
 .container{
     background-color: aqua;
     background-image: url('../../assets/img/Background/PageHautGauche.png');
-    margin: auto;
-    height: 90vh;
-    background-size: cover;
+    grid-column: 1/ span 12;
+    grid-row: 1/ span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    align-items: center;
+    grid-template-rows: repeat(5, 1fr);
     justify-items: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 button{
@@ -31,18 +31,30 @@ button{
 }
 
 #haut{
-    grid-column: 6 / span 2;
+    grid-column: 6 / span 1;
+    grid-row : 1/ span 1;
+    align-self: flex-start;
+    justify-self: center;
 }
 #bas{
     grid-column: 6 / span 2;
-    grid-row: 10;
+    grid-row: 5/ span 1;
+    align-self: flex-end;
+    justify-self: center;
+
 }
 #droite{
-    grid-column: 12;
-    grid-row: 5 / span 2;
+    grid-column: 12 / span 1;
+    grid-row: 3/ span 1;
+    align-self: center;
+    justify-self: flex-end;
 }
 #gauche{
-    grid-row: 5 / span 2;
+    grid-column: 1/ span 1;
+    grid-row: 3/ span 1;
+    align-self: center;
+    justify-self: flex-start;
+
 }
 
 .imgRessources:hover{
@@ -51,25 +63,32 @@ button{
 
 #bambou{
     grid-column: 9 / span 3;
-    grid-row: 7 / span 3;
-    width: 80%;
+    grid-row: 3/ span 2;
 }
 
 #paquerette{
-    grid-column: 7 / span 1;
-    grid-row: 3 / span 2;
+    grid-column: 6 / span 2;
+    grid-row: 2/ span 1;
 }
 
 #brique{
     grid-column: 1 / span 3;
-    grid-row: 2 / span 3;
-    width: 70%;
+    grid-row: 1/ span 4;
+    width: 250px;
 }
-#imgJute{
+
+#imgBrique{
     width: 100%;
 }
 
 #carpe{
-    grid-column: 11 / span 1;
-    grid-row: 2 / span 2;
+    grid-column: 10 / span 1;
+    grid-row: 1/ span 1;
+
 }
+
+
+#imgBambou {
+    height : 240px; 
+}
+

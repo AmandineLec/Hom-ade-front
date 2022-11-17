@@ -1,0 +1,38 @@
+#mainDiv{
+  color: #F5F5F5;
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+#box{
+  background-color: #8C592A;
+  border-color: #99B800;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 120px;
+  h2{
+    margin-left: 80px;
+  }
+}
+
+a:link {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+.login{
+  input {
+    background-color: #F5F5F5;
+  }
+}
+#login{
+  margin-top: 10px;
+  margin-left: 80px;
+
+  input{
+    color: #F5F5F5;
+    background-color: #99B800;
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+}

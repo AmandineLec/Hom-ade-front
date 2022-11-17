@@ -1,3 +1,10 @@
-
+<app-menu (jouer)="play()" id="app-menu"></app-menu>
+<button id="params" (click)="openModal('parametres')"></button>
 <router-outlet></router-outlet>
-<app-menu></app-menu>
+<app-menu-jeu></app-menu-jeu>
+
+<parametres id="parametres">
+    <button id="closeParams" (click)="closeModal('parametres')"><img id="imgClose" src="../assets/img/Divers/Close.png" alt=""></button>
+    <br>
+    <app-parametres></app-parametres>
+</parametres>

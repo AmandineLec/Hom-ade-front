@@ -6,15 +6,15 @@
     grid-template-rows: repeat(10, 1fr);
     background-color: aqua;
     background-image: url('../../assets/img/Background/PageAccueil.png');
-    background-size: cover;    
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
-    margin: auto;
-    height: 90vh;
 }
 
 .direction{
     width: 50px;
     filter: contrast(50%);
+    justify-items: center;
+    align-items: center;
 }
 
 .imgDirection{
@@ -25,18 +25,27 @@
 }
 
 #haut{
-    grid-column: 7 / span 2;
+    grid-column: 6 / span 2;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: flex-start;
 }
 #bas{
-    grid-column: 7 / span 2;
-    grid-row: 10;
+    grid-column: 6 / span 2;
+    grid-row: 10 /span 2;
+    justify-self: center;
+    align-self: flex-end;
 }
 #droite{
-    grid-column: 13;
+    grid-column: 12;
     grid-row: 5 / span 2;
+    justify-self: flex-end;
+    align-self: center;
 }
 #gauche{
     grid-row: 5 / span 2;
+    justify-self: flex-start;
+    align-self: center;
 }
 
 button {
@@ -70,7 +79,7 @@ button {
 }
 
 #imgMaison {
-    height: 430px;
+    height: 400px;
 }
 
 #imgArbre {

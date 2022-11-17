@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Personnage} from "../personnage";
 import{ApiService} from "../api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -12,7 +13,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   submitted = false;
 
-  constructor(private api : ApiService) { }
+  constructor(private api : ApiService, private http: HttpClient) {
+    http.get('')
+  }
   personnage : FormGroup = new FormGroup({
     mail:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required])
@@ -23,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     // perso bien enrégsitré en bdd mais lors de la connection affiche "id incorrects"
-    this.api.login(this.personnage.value as Personnage).subscribe((perso) => {
+    this.api.login(this.personnage.value).subscribe((perso) => {
       console.warn(this.personnage.value);
       if(this.api.isPersonnage(perso)){
         this.submitted = true;
@@ -31,6 +34,7 @@ export class LoginComponent implements OnInit {
       console.warn(this.personnage.value);
       this.api.redirectToAccount();
     })
-  }
 
+  //this.api.test();
+  }
 }

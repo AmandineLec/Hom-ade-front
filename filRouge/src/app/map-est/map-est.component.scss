@@ -5,7 +5,6 @@
     background-size: 100% 100%; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    justify-items: center;
     background-repeat: no-repeat;
 }
 
@@ -31,11 +30,14 @@ button{
 #haut{
     grid-column: 6 / span 2;
     grid-row: 1/ span 1;
+    justify-self: center;
+    align-self: flex-start;
 }
 #bas{
     grid-column: 6 / span 2;
     grid-row: 5 / span 1;
-    margin-bottom: 7px;
+    justify-self: center;
+    align-self: flex-end;
 }
 #droite{
     grid-column: 12;
@@ -44,12 +46,16 @@ button{
         left : 70px; 
         top : 80px;
     }
+    justify-self: flex-end;
+    align-self: center;
 }
 #gauche{
     grid-row: 3/ span 1;
     margin : {
         top : 80px;
     }
+    justify-self: flex-start;
+    align-self: center;
 }
 
 .imgRessources:hover{

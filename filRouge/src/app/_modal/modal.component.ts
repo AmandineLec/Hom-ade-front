@@ -43,7 +43,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
     // open modal
     open(): void {
-        this.element.style.display = 'block';
+        this.element.style.display = 'grid';
         document.body.classList.add('jw-modal-open');
     }
 

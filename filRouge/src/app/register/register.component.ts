@@ -42,10 +42,9 @@ export class RegisterComponent implements OnInit {
     this.api.register(this.personnage.value).subscribe((perso) => {
       if(this.api.isPersonnage(perso)){
         this.submitted = true;
+        this.api.redirectTologin();
         console.warn(this.personnage.value);
       }
     })
-    this.api.redirectTologin();
-
   }
 }

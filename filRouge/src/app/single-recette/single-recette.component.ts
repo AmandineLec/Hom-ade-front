@@ -10,9 +10,15 @@ import { RecetteService } from '../service/recette.service';
 })
 export class SingleRecetteComponent implements OnInit {
   @Input() objet! :Objet; 
+  created :Boolean = true; 
   constructor(private recetteService :RecetteService) { }
   ngOnInit(): void {
-      this.recetteService.getObjet(this.objet.id).subscribe(objetFromService=>
+      this.recetteService.getRecette(this.objet.id).subscribe(objetFromService=>
         this.objet = objetFromService);
+  }
+
+  CreerObjet(id : number) {
+    this.recetteService.getObjet(id).subscribe(objetFromService => 
+      this.created = objetFromService)
   }
 }

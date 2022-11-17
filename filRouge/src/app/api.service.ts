@@ -15,7 +15,7 @@ export class ApiService  {
   private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
   private deconnection = 'http://localhost:8080/accueil_connexion';
-   headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+  //  headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
   /*https://www.journaldunet.fr/web-tech/developpement/1441195-behaviorsubject-vs-observable/#:~:text=Les%20classes%20%22Subject%22%20et%20%22,utilis%C3%A9s%20par%20le%20framework%20Angular.
   https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject

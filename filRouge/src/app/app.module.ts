@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuJeuComponent } from './menu-jeu/menu-jeu.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ModalModule } from './_modal';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,9 @@ import { ModalModule } from './_modal';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ModalModule
-  ],
+    ModalModule,
+    ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

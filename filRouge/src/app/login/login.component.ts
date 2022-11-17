@@ -3,6 +3,7 @@ import {Personnage} from "../personnage";
 import{ApiService} from "../api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {HttpClient} from "@angular/common/http";
 export class LoginComponent implements OnInit {
   submitted = false;
 
-  constructor(private api : ApiService) {
+  constructor(private api : ApiService, private router :Router) {
 
   }
   personnage : FormGroup = new FormGroup({
@@ -31,6 +32,9 @@ export class LoginComponent implements OnInit {
           this.api.authStatus.logged = true;
           this.api.authStatus.personnage = response;
           this.api.authenticate();
+          this.router.navigateByUrl('/account');
+          console.log(response)
+          sessionStorage.setItem("user", JSON.stringify(response));
         }
     },
     (error) => {

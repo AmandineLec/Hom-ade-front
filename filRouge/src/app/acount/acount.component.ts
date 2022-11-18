@@ -17,7 +17,9 @@ export class AcountComponent implements OnInit {
   ngOnInit(): void {
     this.api.getPersonnageInfos().subscribe((personnage) => {
       if(this.api.isPersonnage(personnage))
-      console.log("coucou");
+      this.user = personnage;
+      //console.log("coucou");
+      console.log(this.user);
     })
     /*https://www.angularjswiki.com/httpclient/post/
     this.api.getPersonnageInfos().subscribe((response: any) => {

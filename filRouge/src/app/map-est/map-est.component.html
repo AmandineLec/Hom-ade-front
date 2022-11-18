@@ -3,7 +3,9 @@
     <a routerLink="/jeu/se" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
     <a routerLink="/jeu/c" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
     
-    <button id="source" (click)="recolte(23)" *ngIf="objetsRecoltables[23].pv > 0"><img id="imgSource" class="imgRessources recoltable" src="../../assets/img/Ressources/Source.png" alt=""></button>
+    <button id="source" (click)="recolte(23)" *ngIf="objetsRecoltables[23].pv > 0">
+        <img id="imgSource" class="imgRessources recoltable" src="../../assets/img/Ressources/Source.png" alt="">
+    </button>
 
     <button id="silex" (click)="recolte(24)" *ngIf="objetsRecoltables[24].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Silex.png" alt="" id="imgSilex"></button>
 

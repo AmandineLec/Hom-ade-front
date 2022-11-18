@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,7 +17,7 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { ModalModule } from './_modal';
 import { InventaireComponent } from './inventaire/inventaire.component';
 import { SingleRecetteComponent } from './single-recette/single-recette.component';
-import {FormsModule,ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -39,12 +38,12 @@ import {FormsModule,ReactiveFormsModule} from "@angular/forms";
     SingleRecetteComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-    HttpClientModule,
-    ModalModule,
+      BrowserModule,
+      AppRoutingModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      HttpClientModule,
+      ModalModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import {Personnage} from "../personnage"
-import {ActivatedRoute, Router} from "@angular/router";
-import {AuthStatus} from "../auth-status";
-
+import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
+import {Personnage} from "../personnage";
+import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
+import { AuthStatus } from '../auth-status';
 
 
 
@@ -25,7 +24,6 @@ export class ApiService  {
     logged : false
   };
   private personnage = new Subject<Personnage>();
-
   PersoEnvoye$ = this.personnage.asObservable();
 
   authenticate() : void {
@@ -59,9 +57,10 @@ export class ApiService  {
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
 
+
+
   envoyerPerso(personnage :Personnage){
     this.personnage.next(personnage);
   }
-
 
 }

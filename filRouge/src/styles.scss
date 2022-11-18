@@ -38,11 +38,11 @@ app-root{
 }
 
 .outlet{
-  grid-column: 5 / span 4;
-  justify-self: center;
-  align-self: center;
-  width: 600px;
-  height: 400px;
+    grid-column: 5 / span 4;
+    justify-self: center;
+    align-self: center;
+    width: 600px;
+    height: 400px;
 }
 
 .modalRecette {
@@ -51,6 +51,11 @@ app-root{
 }
 
 .modalSingleRecette{
-  grid-column: 2/ span 6;
-  grid-row: 1/ span 1;
+    grid-column: 2/ span 6;
+    grid-row: 1/ span 1;
+}
+
+.modalInventaire{
+    grid-column: 1/ span 8;
+    grid-row: 1/ span 1;
 }

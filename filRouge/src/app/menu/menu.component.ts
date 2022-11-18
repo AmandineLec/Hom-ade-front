@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../service/api.service';
+import { ApiService } from '../service/api.service'
 
 @Component({
   selector: 'app-menu',
@@ -10,20 +10,22 @@ import { ApiService } from '../service/api.service';
   host : {'class' : 'menu'}
 })
 export class MenuComponent implements OnInit {
-  authenticated = this.apiService.authenticated;
   @Output() jouer = new EventEmitter<boolean>();
-  constructor(private apiService: ApiService, private http: HttpClient, private router: Router){
+  constructor(private apiService : ApiService, private http: HttpClient, private router: Router){
   }
+ 
+  authenticated = true;
 
   logout(){
-    this.http.post('logout', {}).subscribe(() => {
-      this.apiService.authenticated = false;
-      console.log('déconnecté')
+    this.apiService.logout().subscribe(response => {
+      console.log("déconnecté");
+      this.router.navigateByUrl('/acount');
+      this.apiService.authStatus = {logged : false};
     })
   }
 
-
   ngOnInit(): void {
+
   }
 
   play(value : boolean){
@@ -31,6 +33,8 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl('/jeu/c');
   }
 
-
+  logged(): boolean{
+    return false;
+  }
 
 }

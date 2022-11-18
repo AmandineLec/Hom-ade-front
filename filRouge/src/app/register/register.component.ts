@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Personnage} from "../personnage";
-import { FormBuilder } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 
 
@@ -13,23 +12,16 @@ import { ApiService } from '../service/api.service';
   host: {'class' : 'outlet'}
 })
 export class RegisterComponent implements OnInit {
-  constructor(private api : ApiService, private formbuilder: FormBuilder) { }
+
+  constructor(private api : ApiService) { }
+  
   persos!: Personnage[];
 
   submitted = false;
 
-
   ngOnInit(): void {
     this.submitted=false;
   }
-  /* trouver comment obtenir les valeurs des champs
-  persoForm = this.formbuilder.group({
-      mail: ['',Validators.required],
-      nom: ['',Validators.required],
-      genre: ['',Validators.required],
-      password: ['',Validators.required]
-  });
-  */
 
   personnage : FormGroup = new FormGroup({
     name:new FormControl('' , [Validators.required]),
@@ -37,7 +29,6 @@ export class RegisterComponent implements OnInit {
     mail:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required])
   });
-
 
   onSubmit() {
     this.api.register(this.personnage.value).subscribe((perso) => {

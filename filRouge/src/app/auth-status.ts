@@ -1,6 +1,6 @@
 import {Personnage} from "./personnage";
 
-export interface LogStatus {
+export interface AuthStatus {
   logged: boolean,
   personnage? : Personnage
 }

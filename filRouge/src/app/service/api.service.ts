@@ -54,17 +54,14 @@ export class ApiService  {
   pObservable = this.personnageActuel.asObservable() // est ce pour observer le statut du personnageActuel ?
    */
 
-   register(personnage: Personnage): Observable<Personnage>{
+  register(personnage: Personnage): Observable<Personnage>{
     return this.http.post<Personnage>(this.inscription, personnage);
   }
 
   redirectTologin() {
     this.router.navigate(['/login']);
   }
-  // https://stackoverflow.com/questions/27406994/http-requests-withcredentials-what-is-this-and-why-using-it
-  // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials
-  //https://weblog.west-wind.com/posts/2019/Apr/07/Creating-a-custom-HttpInterceptor-to-handle-withCredentials
-  // https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
+
   login(personnage: Personnage): Observable<Personnage>{
   return this.http.post<Personnage>(this.connection,{
     name: personnage.mail,
@@ -84,16 +81,7 @@ export class ApiService  {
 
 
   redirectToAccount() {
-    this.router.navigateByUrl('/acount');
-  }
-
-  getPersonnageInfos(): Observable<Personnage>{
-    return this.http.get<Personnage>(this.account, {withCredentials : true});
-  }
-
-
-   isPersonnage(obj : any): obj is Personnage{
-    return "mail" in obj;
+    this.router.navigateByUrl('/account');
   }
 
   logout() : Observable<Personnage>{

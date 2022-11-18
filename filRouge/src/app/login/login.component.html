@@ -1,21 +1,17 @@
-<div id="mainDiv">
-  <div id="box">
-    <h2>CONNEXION</h2>
-    <form (ngSubmit)="onSubmit()" [formGroup]="personnage">
-      <div>
-        <label for="mail">E-mail :</label><br>
-        <input type="text" name="mail" id="mail" formControlName="mail"  required>
-      </div><br>
-      <div>
-        <label for="password">Mot de passe :</label><br>
-        <input type="password" id="password" name="password"
-               minlength="8" formControlName="password" required>
-      </div>
-      <a routerLink='/register'><span>Pas encore inscrit? Créer un compte</span></a>
-      <div id="login">
-        <input type="submit" value="C'est parti !">
-      </div>
-    </form>
-  </div>
+<div id="box">
+  <h2>CONNEXION</h2>
+  <form action="" method="get">
+    <div>
+      <label for="identifiant">Identifiant :</label><br>
+      <input type="text" name="identifiant" id="identifiant" required>
+    </div>
+    <div>
+      <label for="password">Mot de passe :</label><br>
+      <input type="password" id="password" name="password"
+              minlength="8" required>
+    </div>
+    <div id="divReg"><span>Pas encore inscrit ?</span><a id="register" routerLink='/register'>Créer un compte</a></div>
+    <button id="submit" type="submit">Se connecter</button>
+  </form>
 </div>
 

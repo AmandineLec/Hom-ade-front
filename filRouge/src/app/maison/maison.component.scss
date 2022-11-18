@@ -1,0 +1,193 @@
+.container{
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 2;
+    background-image: url('../../assets/img/Background/InterieurMaison.png');
+    background-size: 100% 100%; 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    justify-items: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+#imgDirection{
+    width: 100%;
+    filter: opacity(150%)
+}
+
+#sortie{
+    grid-column: 1;
+    grid-row: 9 / span 2;
+    justify-self: flex-start;
+    align-self: center;
+    width: 120px;
+    // filter: contrast(50%);
+    justify-items: center;
+    align-items: center;
+    z-index: 500;
+}
+
+img{
+    filter: contrast(80%);
+    filter: opacity(0.8);
+}
+// Gestion Hover Buttons
+img:hover, #imgDirection:hover{
+    filter: contrast(50%);
+}
+
+// Buttons
+#cadre{
+    background-color: transparent;
+    border: 0px;
+    width: 100px;
+    grid-column: 3 / span 2;
+    grid-row: 5;
+    position: relative;
+    z-index: 5;
+}
+#imgCadre{
+    width: 100%;
+    rotate: 0.1 0.5 0.6 90deg;
+}
+
+#chaise{
+    background-color: transparent;
+    border: 0px;
+    width: 130px;
+    grid-column: 7 / span 2;
+    grid-row: 9 / span 2;
+    position: relative;
+    z-index: 5;  
+}
+#imgChaise{
+    width: 100%;
+}
+
+#table{
+    background-color: transparent;
+    border: 0px;
+    width: 150px;
+    height: 100px;
+    grid-column: 6 / span 2;
+    grid-row: 9 / span 2;
+    position: relative;
+    z-index: 50;
+    
+}
+#imgTable{
+    width: 100%;
+}
+
+#toilettes{
+    background-color: transparent;
+    border: 0px;
+    width: 100px;
+    grid-column: 6 / span 2;
+    grid-row: 6 / span 2;
+    position: relative;
+    z-index: 5;  
+}
+#imgToilettes{
+    width: 100%;
+}
+
+#decoFond{
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    grid-column: 9 / span 1;
+    grid-row: 6 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgDecoFond{
+    width: 100%;
+    rotate: 0 3 0 30deg;
+}
+
+#etagere{
+    background-color: transparent;
+    border: 0px;
+    width: 100px;
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgEtagere{
+    width: 100%;
+    rotate: 0.1 0.5 0.6 90deg;
+}
+
+#decoBas{
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    grid-column: 12 / span 1;
+    grid-row: 12 / span 1;
+    position: relative;
+    z-index: 5;  
+}
+#imgDecoBas{
+    width: 100%;
+    rotate: 0 3 0 30deg;
+}
+
+// Polygones murs/sol
+#bas{
+    border-bottom: 372px solid #8C592A;
+    border-left  : 575px solid transparent; 
+    border-right : 575px solid transparent;
+    height : 0;
+    width  : 40%;
+    grid-column: 1 / span 12;
+    grid-row: 7 / span 6;
+    z-index: -250;
+    background-repeat:round;
+}
+
+#fond{
+    height : 100%;
+    width  : 40%;
+    background-color: #e29d5c;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 6;
+    z-index: -200;
+}
+
+#gauche{
+    align-self: center;
+    justify-self: flex-start;
+    border-bottom: 372px solid transparent ;
+    border-left : 576px solid #ffdcbc;
+    height : 100%;
+    width  : 0;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 9;
+    z-index: -200;
+    // border-image-source: url(../../assets/img/Décoration/fond2.png);
+    // border-image-width: 560px 580px 0px 0px;
+    // border-image-repeat: repeat;
+
+}
+
+#droite{
+    align-self: center;
+    justify-self: flex-start;
+    border-bottom: 372px solid transparent ;
+    border-right : 576px solid #ffdcbc;
+    height : 100%;
+    width  : 0;
+    grid-column: 10 / span 4;
+    grid-row: 1 / span 9;
+    z-index: -200;
+}
+

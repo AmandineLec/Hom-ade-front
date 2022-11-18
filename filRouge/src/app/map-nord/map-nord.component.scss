@@ -1,0 +1,81 @@
+.map {
+    grid-column: 1/span 12;
+    grid-row: 1/span 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-image: url('../../assets/img/Background/PageHaut.png');
+    background-size: 100% 100%;
+    background-color: aqua;
+    background-repeat: no-repeat;
+    justify-items: center;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 5 / span 2;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 5 /span 1;
+    justify-self: center;
+    align-self: flex-end;
+}
+#droite{
+    grid-column: 12 / span 1;
+    grid-row: 3;
+    justify-self: flex-end;
+    align-self: center;
+}
+#gauche{
+    grid-row: 3;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+#mare {
+    grid-column: 7/span 3;
+    grid-row: 1/span 2;
+}
+
+#coton {
+    grid-column: 9 /span 2;
+    grid-row: 3 /span 2;
+    z-index : 3; 
+}
+
+#coquille {
+    grid-column: 6/span 1;
+    grid-row: 3/span 1;
+    z-index : 4;
+}
+
+#roseau {
+    grid-column: 3/span 2;
+    grid-row: 1/span 2;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+    width : 100; 
+}
+
+#mareImg {
+    height : 200px; 
+}

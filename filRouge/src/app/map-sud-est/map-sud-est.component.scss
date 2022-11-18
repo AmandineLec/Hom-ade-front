@@ -1,0 +1,80 @@
+.container{
+    background-image: url('../../assets/img/Background/PageBasDroite.png');
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    justify-items: center;
+    background-repeat: no-repeat;
+    grid-column: 1/ span 12;
+    grid-row: 1 / span 2;
+}
+
+button{
+    background-color: transparent; 
+    border: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+    height : 50px; 
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+    grid-row: 1/ span 1;
+    justify-self: center;
+    align-self: flex-start;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 6/ span 1;
+    margin-top: 45px;
+}
+#droite{
+    grid-column: 12;
+    grid-row: 4 / span 1;
+}
+#gauche{
+    grid-row: 3 / span 2;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}
+
+#chanvre{
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 4;
+    width: 80%;
+}
+
+#coquille{
+    grid-column: 7 / span 2;
+    grid-row: 3 / span 2;
+}
+
+#jute{
+    grid-column: 6 / span 2;
+    grid-row: 5/ span 2;
+}
+#imgJute{
+    width: 100%;
+}
+
+#brochet{
+    grid-column: 11 / span 1;
+    grid-row: 2 / span 2;
+}

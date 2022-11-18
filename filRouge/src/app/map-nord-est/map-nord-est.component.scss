@@ -1,0 +1,77 @@
+.container{
+    background-color: aqua;
+    background-image: url('../../assets/img/Background/PageHautDroite.png');
+    grid-column: 1/ span 12;
+    grid-row: 1/ span 1;
+    background-size: 100% 100%; 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    justify-items: center;
+    background-repeat: no-repeat;
+}
+
+button{
+    background-color: transparent; 
+    border: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 5/ span 1;
+    justify-self: center;
+    align-self: flex-end;
+}
+#droite{
+    grid-column: 12;
+    grid-row: 2 / span 2;
+}
+#gauche{
+    grid-row: 3;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}
+
+#cuivre{
+    grid-column: 10 / span 2;
+    grid-row: 1 / span 2;
+    width: 80%;
+}
+
+#plomb{
+    grid-column: 7 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#fer{
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+    width: 70%;
+}
+
+#granit{
+    grid-column: 11 / span 1;
+    grid-row: 4 / span 1;
+    width: 50%;
+}

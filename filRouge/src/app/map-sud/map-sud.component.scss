@@ -1,0 +1,74 @@
+.map {
+    grid-column: 1/span 12;
+    grid-row: 1/span 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-image: url('../../assets/img/Background/PageBas.png');
+    background-size: 100% 100%;
+    background-color: aqua;
+    background-repeat: no-repeat;
+}
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+    justify-self: center;
+    align-self: flex-start;
+}
+#bas{
+    grid-column: 5 / span 2;
+    grid-row: 5;
+}
+#droite{
+    grid-column: 12;
+    grid-row: 3 / span 1;
+    justify-self: flex-end;
+    align-self: center;
+}
+#gauche{
+    grid-row: 3 / span 1;
+    grid-column: 1;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+#pluie {
+    grid-column: 2/span 3;
+ 
+}
+
+#lin {
+    grid-column: 9/span 2;
+    grid-row: 4/span 2;
+}
+
+#eau {
+    grid-column: 8/span 1;
+    grid-row: 6/span 1;
+}
+
+#marbre {
+    grid-row: 5/span 3;
+    grid-column: 1 / span 3;
+}
+
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}

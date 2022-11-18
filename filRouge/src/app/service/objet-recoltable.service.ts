@@ -41,7 +41,7 @@ export class ObjetRecoltableService {
 
   recolte(index: number): Observable<ObjetRecoltable> {
     const url: string = this.objetRecoltableUrl + 'recolte?index=' + index;
-    return this.http.get<ObjetRecoltable>(url)
+    return this.http.get<ObjetRecoltable>(url, {withCredentials: true})
     .pipe(
       catchError(this.handleError<ObjetRecoltable>('recolte'))
     );

@@ -7,6 +7,7 @@ import {LogStatus} from "./log-status";
 import { map } from 'rxjs/operators';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { AuthStatus } from './auth-status';
+import { Joueur } from './interface/joueur';
 
 
 
@@ -36,7 +37,7 @@ export class ApiService  {
     const headers = new HttpHeaders(this.authStatus.logged ? {
       authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
     } : {});
-    this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
+    this.http.get<Joueur>(this.account,{withCredentials : true, headers : headers}).subscribe()
   }
 
   isPersonnage(perso : any) : perso is Personnage{

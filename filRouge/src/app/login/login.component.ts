@@ -4,6 +4,7 @@ import{ApiService} from "../api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
 import { Router } from '@angular/router';
+import { Joueur } from '../interface/joueur';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
           this.api.authStatus.logged = true;
           this.api.authStatus.personnage = response;
           this.api.authenticate();
-          this.api.envoyerPerso(response as Personnage);
+          this.api.envoyerPerso(response as Joueur);
           sessionStorage.setItem("personnage", JSON.stringify(response));
           this.router.navigateByUrl('/account');
         }

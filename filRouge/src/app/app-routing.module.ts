@@ -5,7 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecettesComponent } from './recettes/recettes.component';
 import { RegisterComponent } from './register/register.component';
-import { RecetteService } from './service/recette.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

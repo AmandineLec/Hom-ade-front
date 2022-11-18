@@ -27,6 +27,8 @@ export class ApiService  {
   private personnage = new Subject<Personnage>();
   PersoEnvoye$ = this.personnage.asObservable();
 
+  private authenticated = new Subject<boolean>();
+  athEnvoye$ = this.authenticated.asObservable();
 
   authenticate() : void {
     const headers = new HttpHeaders(this.authStatus.logged ? {
@@ -58,7 +60,7 @@ export class ApiService  {
   logout() : Observable<Personnage>{
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
-  
+
   getPersonnageInfos(): Observable<Personnage>{
     return this.http.get<Personnage>(this.account, {withCredentials : true});
   }

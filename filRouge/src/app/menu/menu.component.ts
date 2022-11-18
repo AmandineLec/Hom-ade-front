@@ -11,16 +11,16 @@ import { ApiService } from '../service/api.service';
 })
 export class MenuComponent implements OnInit {
   @Output() jouer = new EventEmitter<boolean>();
-  constructor(private apiService: ApiService, private http: HttpClient, private router: Router){
+  constructor(private apiService : ApiService, private http: HttpClient, private router: Router){
   }
  
-  authenticated = this.apiService.authStatus.logged;
-
-
+  authenticated = true;
 
   logout(){
-    this.http.post('logout', {}).subscribe(() => {
-      console.log('déconnecté')
+    this.apiService.logout().subscribe(response => {
+      console.log("déconnecté");
+      this.router.navigateByUrl('/acount');
+      this.apiService.authStatus = {logged : false};
     })
   }
 
@@ -31,6 +31,10 @@ export class MenuComponent implements OnInit {
   play(value : boolean){
     this.jouer.emit(value);
     this.router.navigateByUrl('/jeu/c');
+  }
+
+  logged(): boolean{
+    return false;
   }
 
 }

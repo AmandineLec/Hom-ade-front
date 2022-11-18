@@ -5,7 +5,7 @@
     <a routerLink="/jeu/o" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
 
 
-    <button id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </button>
+    <a routerLink="/jeu/maison" id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /></a>
 
     
         <button id="arbre" (click)="recolte(0)" *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">

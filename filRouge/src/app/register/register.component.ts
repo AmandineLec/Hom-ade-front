@@ -13,7 +13,9 @@ import { ApiService } from '../service/api.service';
   host: {'class' : 'outlet'}
 })
 export class RegisterComponent implements OnInit {
-  constructor(private api : ApiService, private formbuilder: FormBuilder) { }
+
+  constructor(private api : ApiService) { }
+  
   persos!: Personnage[];
 
   submitted = false;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ApiService} from "../service/api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Personnage } from '../personnage';
 
 
 @Component({
@@ -27,7 +28,6 @@ credentials: any;
     this.api.login(this.personnage.value).subscribe(response => {
         if (this.api.isPersonnage(response)) {
           this.api.authStatus.logged = true;
-          console.log(this.api.authStatus.logged);
           this.api.authStatus.personnage = response;
           this.api.authenticate();
           this.api.envoyerPerso(response as Personnage);

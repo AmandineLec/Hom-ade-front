@@ -2,11 +2,11 @@
     <a routerLink="/jeu/e" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
     <a routerLink="/jeu/s" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
     
-    <button id="chanvre" (click)="recolte(31)"><img id="imgChanvre" class="imgRessources" src="../../assets/img/Ressources/Chanvre.png" alt=""></button>
+    <button id="chanvre" (click)="recolte(31)" *ngIf="objetsRecoltables[31].pv > 0"><img id="imgChanvre" class="imgRessources" src="../../assets/img/Ressources/Chanvre.png" alt=""></button>
 
-    <button id="coquille" (click)="recolte(32)"><img class="imgRessources" src="../../assets/img/Ressources/CoquileSaintJacques.png" alt="" id="imgCoquille"></button>
+    <button id="coquille" (click)="recolte(32)" *ngIf="objetsRecoltables[32].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/CoquileSaintJacques.png" alt="" id="imgCoquille"></button>
 
-    <button id="jute" (click)="recolte(33)"><img class="imgRessources" src="../../assets/img/Ressources/Jute.png" alt="" id="imgJute"></button>
+    <button id="jute" (click)="recolte(33)" *ngIf="objetsRecoltables[33].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Jute.png" alt="" id="imgJute"></button>
 
-    <button id="brochet" (click)="recolte(34)"><img class="imgRessources" src="../../assets/img/Ressources/Brochet.png" alt="" id="imgBrochet"></button>
+    <button id="brochet" (click)="recolte(34)" *ngIf="objetsRecoltables[34].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Brochet.png" alt="" id="imgBrochet"></button>
 </div>

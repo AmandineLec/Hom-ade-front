@@ -50,17 +50,12 @@ app-menu-jeu{
 
 parametres{
     display: none;
-
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     position: fixed;
     top: 6%;
     right: 0;
-    // bottom: 70%;
-    // left: 82%;
-
     z-index: 1000;
-    
     overflow: hidden;
     padding: 20px;
     background: #643F1D;

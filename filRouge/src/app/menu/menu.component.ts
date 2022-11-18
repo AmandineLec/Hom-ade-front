@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
 
   play(value : boolean){
     this.jouer.emit(value);
+    this.router.navigateByUrl('/jeu/c');
   }
 
 }

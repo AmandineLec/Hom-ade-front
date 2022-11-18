@@ -28,6 +28,13 @@ export class ApiService  {
 
   PersoEnvoye$ = this.personnage.asObservable();
 
+  authenticate() : void {
+    const headers = new HttpHeaders(this.authStatus.logged ? {
+      authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
+    } : {});
+    this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
+  }
+
   isPersonnage(perso : any) : perso is Personnage{
     return "mail" in perso;
   }
@@ -52,8 +59,9 @@ export class ApiService  {
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
 
-  envoyerUser(personnage :Personnage){
+  envoyerPerso(personnage :Personnage){
     this.personnage.next(personnage);
   }
-  
+
+
 }

@@ -13,9 +13,8 @@ export class MenuComponent implements OnInit {
   authenticated = this.apiService.authenticated;
   @Output() jouer = new EventEmitter<boolean>();
   constructor(private apiService: ApiService, private http: HttpClient, private router: Router){
-    this.apiService.authenticate(undefined, undefined);
   }
- 
+
   logout(){
     this.http.post('logout', {}).subscribe(() => {
       this.apiService.authenticated = false;
@@ -31,5 +30,7 @@ export class MenuComponent implements OnInit {
     this.jouer.emit(value);
     this.router.navigateByUrl('/jeu/c');
   }
+
+
 
 }

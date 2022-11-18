@@ -1,48 +1,56 @@
 body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    background-image: url('assets/img/Background/PageAccueil.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    backdrop-filter: brightness(40%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-image: url('assets/img/Background/PageAccueil.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  backdrop-filter: brightness(40%);
 }
 
 app-root{
-    grid-column: 1 / span 12;
-    grid-row: 1/ span 2;
-    display : grid; 
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 15% 65% 20%
+  grid-column: 1 / span 12;
+  grid-row: 1/ span 2;
+  display : grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 15% 65% 20%
 }
 
 .map {
-    grid-column: 1/span 12;
-    grid-row: 1/ span 2; 
-    display : grid; 
-    grid-template-columns: repeat(12, 1fr);
-    height : 80vh; 
+  grid-column: 1/span 12;
+  grid-row: 1/ span 2;
+  display : grid;
+  grid-template-columns: repeat(12, 1fr);
+  height : 80vh;
 }
 
 .menujeu {
-    grid-column: 1/ span 12;
-    grid-row: 3/ span 1
+  grid-column: 1/ span 12;
+  grid-row: 3/ span 1
 }
 
 .menu {
-    grid-row: 1/span 1;
-    grid-column: 1/ span 12;
-    z-index : 5; 
+  grid-row: 1/span 1;
+  grid-column: 1/ span 12;
+  z-index : 5;
+}
+
+.outlet{
+  grid-column: 5 / span 4;
+  justify-self: center;
+  align-self: center;
+  width: 600px;
+  height: 400px;
 }
 
 .modalRecette {
-    grid-column: 1/ span 8;
-    grid-row: 1/ span 1;
+  grid-column: 1/ span 8;
+  grid-row: 1/ span 1;
 }
 
 .modalSingleRecette{
-    grid-column: 2/ span 6;
-    grid-row: 1/ span 1;
+  grid-column: 2/ span 6;
+  grid-row: 1/ span 1;
 }

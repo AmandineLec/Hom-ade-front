@@ -2,11 +2,11 @@
     <a routerLink="/jeu/e" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
     <a routerLink="/jeu/n" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
     
-    <button id="cuivre" (click)="recolte(27)" *ngIf="objetsRecoltables[27].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Cuivre.png" alt="" id="imgCuivre"></button>
+    <button id="cuivre" (click)="recolte(27)" *ngIf="objetsRecoltables[27].pv > 0"><img class="imgRessources recoltable" src="../../assets/img/Ressources/Cuivre.png" alt="" id="imgCuivre"></button>
 
     <button id="plomb" (click)="recolte(28)" *ngIf="objetsRecoltables[28].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/PepiteDePlomb.png" alt="" id="imgPlomb"></button>
 
-    <button id="fer" (click)="recolte(29)" *ngIf="objetsRecoltables[29].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Fer.png" alt="" id="imgFer"></button>
+    <button id="fer" (click)="recolte(29)" *ngIf="objetsRecoltables[29].pv > 0"><img class="imgRessources recoltable" src="../../assets/img/Ressources/Fer.png" alt="" id="imgFer"></button>
 
-    <button id="granit" (click)="recolte(30)" *ngIf="objetsRecoltables[30].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Granite.png" alt="" id="imgGranit"></button>
+    <button id="granit" (click)="recolte(30)" *ngIf="objetsRecoltables[30].pv > 0"><img class="imgRessources recoltable" src="../../assets/img/Ressources/Granite.png" alt="" id="imgGranit"></button>
 </div>

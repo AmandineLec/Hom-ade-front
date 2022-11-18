@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Recette } from '../interface/recette';
+import { Objet } from '../interface/objet';
 import { RecetteService } from '../service/recette.service';
+
 
 @Component({
   selector: 'app-recettes',
   templateUrl: './recettes.component.html',
-  styleUrls: ['./recettes.component.scss']
+  styleUrls: ['./recettes.component.scss'],
+  host : {'class' : 'modalRecette'}
 })
 export class RecettesComponent implements OnInit {
-  recettes :Recette[] = [];
   
-  constructor(private recetteService :RecetteService) { }
-
+  constructor() { }
+  modalRecette__button :number = 1; 
   ngOnInit(): void {
-    this.recetteService.getRecette().subscribe(recetteFromService => 
-      this.recettes = recetteFromService);
-      console.log(this.recettes);
   }
-
 }

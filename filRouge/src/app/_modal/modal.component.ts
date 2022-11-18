@@ -3,7 +3,7 @@
 import { ModalService } from './modal.service';
 
 @Component({ 
-    selector: 'jw-modal, parametres', 
+    selector: 'jw-modal, parametres, recette, inventaire, singleRecette', 
     templateUrl: 'modal.component.html', 
 })
 export class ModalComponent implements OnInit, OnDestroy {
@@ -50,6 +50,5 @@ export class ModalComponent implements OnInit, OnDestroy {
     // close modal
     close(): void {
         this.element.style.display = 'none';
-        document.body.classList.remove('jw-modal-open');
     }
 }

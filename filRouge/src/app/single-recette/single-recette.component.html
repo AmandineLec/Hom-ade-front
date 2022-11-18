@@ -1,0 +1,12 @@
+<article class="singleRecette">
+    <h2 class="singleRecette__title">{{objet.nom}}</h2>
+    <img class="singleRecette__objetImage" src="../../assets/img/Objets/{{objet.img}}" alt="{{objet.nom}}">
+    <div class="singleRecette__recettes">
+        <div class="singleRecette__recette" *ngFor="let recette of objet.recettes">
+            <img class="singleRecette__imageRessource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+            <p class="singleRecette__quantite">x{{recette.quantite_necessaire}}</p>
+            <p class="singleRecette__ressource">{{recette.ressource.nom}}</p>
+        </div>
+    </div>
+    <button class="singleRecette__button" (click)="CreerObjet(objet.id)">Créer l'objet</button>
+</article>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Personnage} from "../personnage";
 import{ApiService} from "../api.service";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-acount',
@@ -9,26 +9,22 @@ import {Observable} from "rxjs";
   styleUrls: ['./acount.component.scss']
 })
 export class AcountComponent implements OnInit {
-  user!: Personnage;
-  persos: Personnage[] = [];
+  sub : Subscription = new Subscription();
+  persoSub : Personnage = {
+    name: "",
+    sexe: "",
+    mail: "",
+    password : ""
+  }
 
   constructor(private api : ApiService) { }
 
   ngOnInit(): void {
-    this.api.getPersonnageInfos().subscribe((personnage) => {
-      if(this.api.isPersonnage(personnage))
-      this.user = personnage;
-      //console.log("coucou");
-      console.log(this.user);
+      this.sub = this.api.PersoEnvoye$.subscribe((perso)=> {
+      this.persoSub = perso; 
     })
-    /*https://www.angularjswiki.com/httpclient/post/
-    this.api.getPersonnageInfos().subscribe((response: any) => {
-      console.log(response);
-    })
-     */
-
-
   }
-
-
+  ngOnDestroy():void {
+    this.sub.unsubscribe();
+  }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import {Personnage} from "./personnage";
 import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
 import {LogStatus} from "./log-status";
@@ -27,6 +27,9 @@ export class ApiService  {
   authStatus : AuthStatus = {
     logged : false
   };
+  private personnage = new Subject<Personnage>();
+
+  PersoEnvoye$ = this.personnage.asObservable();
 
 
   authenticate() : void {
@@ -34,7 +37,7 @@ export class ApiService  {
       authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
     } : {});
 
-    this.http.get<Personnage>(this.account+'api/recetteOutils', {withCredentials : true, headers : headers}).subscribe()
+    this.http.get<Personnage>(this.account+ 'api/InventaireRessource', {withCredentials : true, headers : headers}).subscribe()
 
   }
 
@@ -79,14 +82,17 @@ export class ApiService  {
     this.router.navigateByUrl('/acount');
   }
 
-  getPersonnageInfos(): Observable<Personnage>{
-    return this.http.get<Personnage>(this.account, {withCredentials : true});
-  }
+  // getPersonnageInfos(): Observable<Personnage>{
+  //   return this.http.get<Personnage>(this.account, {withCredentials : true});
+  // }
 
 
   logout() : Observable<Personnage>{
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
 
+  envoyerUser(personnage :Personnage){
+    this.personnage.next(personnage);
+  }
 
 }

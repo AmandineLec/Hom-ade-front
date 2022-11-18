@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ObjetRecoltable } from '../interface/objet-recoltable';
-import { Observable, of } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -11,19 +11,19 @@ export class ObjetRecoltableService {
   private objetRecoltableUrl = 'http://localhost:8080/api/';
   objetsRecoltables: ObjetRecoltable[] = [];
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.getObjetsRecoltables().subscribe((objetsRecoltables) => {
       this.objetsRecoltables = objetsRecoltables;
     });
-    for(let i = 0; i < this.objetsRecoltables.length; i++)
+    for (let i = 0; i < this.objetsRecoltables.length; i++)
       this.objetsRecoltables[i].index = i;
   }
 
   getObjetsRecoltables(): Observable<ObjetRecoltable[]> {
-    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables');
-    // .pipe(
-    //   catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
-    // );
+    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables', {withCredentials: true})
+      .pipe(
+        catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
+      );
   }
 
   getObjetRecoltable(index: number): ObjetRecoltable {
@@ -41,10 +41,10 @@ export class ObjetRecoltableService {
 
   recolte(index: number): Observable<ObjetRecoltable> {
     const url: string = this.objetRecoltableUrl + 'recolte?index=' + index;
-    return this.http.get<ObjetRecoltable>(url);
-      // .pipe(
-      //   catchError(this.handleError<ObjetRecoltable>('recolte'))
-      // );
+    return this.http.get<ObjetRecoltable>(url)
+    .pipe(
+      catchError(this.handleError<ObjetRecoltable>('recolte'))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

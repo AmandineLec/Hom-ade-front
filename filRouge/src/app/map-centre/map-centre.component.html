@@ -5,20 +5,22 @@
     <a routerLink="/jeu/o" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
 
 
-    <a routerLink="/jeu/maison" id="maison" ><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </a>
+    <button id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /> </button>
 
-    <div *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
-        <button id="arbre" (click)="recolte(0)">
-            <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Recoltable/Arbre/Sequoia.png" />
+    
+        <button id="arbre" (click)="recolte(0)" *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
+            <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/Sequoia.png" />
         </button>
-    </div>
+   
     <ng-template #elseBlock>
-        <img id="imgArbre" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
+        <button id="arbre">
+        <img id="imgArbreCoupe" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
+    </button>
     </ng-template>
 
-    <button id="poisson" (click)="recolte(1)"><img class="imgRessources"
-            src="../../assets/img/Ressources/Recoltable/Poisson/Sardine.png" /> </button>
+    <button id="poisson" (click)="recolte(1)" *ngIf="objetsRecoltables[1].pv > 0"><img class="imgRessources"
+            src="../../assets/img/Ressources/Sardine.png" /> </button>
 
-    <button id="silex" (click)="recolte(2)"><img class="imgRessources" src="../../assets/img/Ressources/Ramassable/Silex.png" /> </button>
+    <button id="silex" (click)="recolte(2)" *ngIf="objetsRecoltables[2].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Silex.png" /> </button>
 
 </div>

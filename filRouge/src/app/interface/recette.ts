@@ -1,7 +1,8 @@
+import { Ressource } from "./ressource";
+
 export interface Recette {
-    nom: string;
-    ressource : [
-        {nom : string, 
-        quantite : number}
-    ]
+    ressource :Ressource,
+    quantite_necessaire : number, 
+    niveau_requis : number, 
+
 }

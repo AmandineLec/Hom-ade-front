@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Personnage} from "../personnage";
-import { FormBuilder } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 
 

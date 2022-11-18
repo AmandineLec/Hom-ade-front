@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {Personnage} from "../personnage";
 import{ApiService} from "../service/api.service";
-import {Observable, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acount',
   templateUrl: './acount.component.html',
   styleUrls: ['./acount.component.scss'],
-  host: {'class' : 'outlet'}
+  host: {'class' : 'outlet' }
 })
 export class AcountComponent implements OnInit {
   sub : Subscription = new Subscription();

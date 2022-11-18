@@ -8,9 +8,9 @@
     <a routerLink="/jeu/maison" id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /></a>
 
     
-        <button id="arbre" (click)="recolte(0)" *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
-            <img id="imgArbre" class="imgRessources recoltable" src="../../assets/img/Ressources/Sequoia.png" />
-        </button>
+    <button id="arbre" (click)="recolte(0)" *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
+        <img id="imgArbre" class="imgRessources recoltable" src="../../assets/img/Ressources/Sequoia.png" />
+    </button>
    
     <ng-template #elseBlock>
         <button id="arbre">

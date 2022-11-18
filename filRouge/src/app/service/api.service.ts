@@ -27,8 +27,6 @@ export class ApiService  {
   private personnage = new Subject<Personnage>();
   PersoEnvoye$ = this.personnage.asObservable();
 
-  private authenticated = new Subject<boolean>();
-  athEnvoye$ = this.authenticated.asObservable();
 
   authenticate() : void {
     const headers = new HttpHeaders(this.authStatus.logged ? {

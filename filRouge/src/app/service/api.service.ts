@@ -28,7 +28,6 @@ export class ApiService  {
     logged : false
   };
   private personnage = new Subject<Personnage>();
-
   PersoEnvoye$ = this.personnage.asObservable();
 
 
@@ -38,7 +37,6 @@ export class ApiService  {
     } : {});
 
     this.http.get<Personnage>(this.account+ 'api/InventaireRessource', {withCredentials : true, headers : headers}).subscribe()
-
   }
 
   isPersonnage(perso : any) : perso is Personnage{
@@ -52,7 +50,7 @@ export class ApiService  {
   pObservable = this.personnageActuel.asObservable() // est ce pour observer le statut du personnageActuel ?
    */
 
-   register(personnage: Personnage): Observable<Personnage>{
+  register(personnage: Personnage): Observable<Personnage>{
     return this.http.post<Personnage>(this.inscription, personnage);
   }
 

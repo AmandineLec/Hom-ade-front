@@ -3,7 +3,7 @@
   <ul>
     <li *ngIf="authenticated == false"><a routerLink='/register'>Inscription</a></li>
     <li *ngIf="authenticated == false"><a routerLink='/login'>Connexion</a></li>
-    <li *ngIf="authenticated == true"><a routerLink='/acount'>Compte</a></li>
+    <li *ngIf="authenticated == true"><a routerLink='/account'>Compte</a></li>
     <li *ngIf="authenticated == true"><a routerLink='/login' (click)="logout()">Déconnexion</a></li>
     <li *ngIf="authenticated == true"><a routerLink='/login' (click)="play(true)">Jouer</a></li>
   </ul>

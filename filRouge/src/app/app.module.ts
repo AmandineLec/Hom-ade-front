@@ -1,7 +1,6 @@
 import { Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,10 +15,9 @@ import { DecoComponent } from './deco/deco.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ModalModule } from './_modal';
 import { RegisterComponent } from './register/register.component';
-import { ApiService } from './service/api.service';
 import { InventaireComponent } from './inventaire/inventaire.component';
 import { SingleRecetteComponent } from './single-recette/single-recette.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {

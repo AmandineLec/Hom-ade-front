@@ -13,7 +13,7 @@ export class AcountComponent implements OnInit {
   sub : Subscription = new Subscription();
   persoSub : Personnage = {
     name: "",
-    sexe: "",
+    sexe: 0,
     mail: "",
     password : ""
   }

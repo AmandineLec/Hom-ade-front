@@ -18,18 +18,9 @@ export class RegisterComponent implements OnInit {
 
   submitted = false;
 
-
   ngOnInit(): void {
     this.submitted=false;
   }
-  /* trouver comment obtenir les valeurs des champs
-  persoForm = this.formbuilder.group({
-      mail: ['',Validators.required],
-      nom: ['',Validators.required],
-      genre: ['',Validators.required],
-      password: ['',Validators.required]
-  });
-  */
 
   personnage : FormGroup = new FormGroup({
     name:new FormControl('' , [Validators.required]),
@@ -37,7 +28,6 @@ export class RegisterComponent implements OnInit {
     mail:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required])
   });
-
 
   onSubmit() {
     this.api.register(this.personnage.value).subscribe((perso) => {

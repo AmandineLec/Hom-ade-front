@@ -28,4 +28,11 @@ export class AppComponent {
     document.getElementById('menuJeu')!.style.display = "block";
   }
 
+  displayMenus(){
+    document.getElementById("app-menu")!.style.display = "flex";
+    document.getElementById('params')!.style.display = "none";
+    document.getElementById('menuJeu')!.style.display = "none";
+    this.closeModal('parametres');
+  }
+
 }

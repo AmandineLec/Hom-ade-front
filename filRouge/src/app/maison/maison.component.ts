@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { InventaireObjet } from '../interface/inventaire-objet';
+import { Objet } from '../interface/objet';
+import { InventaireService } from '../service/inventaire.service';
 
 @Component({
   selector: 'app-maison',
@@ -7,15 +10,21 @@ import { Component, OnInit } from '@angular/core';
   host : {'class' : 'map'}
 })
 export class MaisonComponent implements OnInit {
+  @Input() inventaire!: InventaireObjet[];
+
   cadre: string = "../../assets/img/Divers/aplacer.png";
   table: string = "../../assets/img/Divers/aplacer.png";
-  etagere: string = "../../assets/img/Divers/aplacer.png"
-  chaise: string = "../../assets/img/Divers/aplacer.png"
-  toilettes: string = "../../assets/img/Divers/aplacer.png"
-  constructor() { }
+  etagere: string = "../../assets/img/Divers/aplacer.png";
+  chaise: string = "../../assets/img/Divers/aplacer.png";
+  toilettes: string = "../../assets/img/Divers/aplacer.png";
 
+  constructor(private inventaireService :InventaireService) { }
+  
   ngOnInit(): void {
+      this.inventaireService.getInventaireObjet().subscribe(inventaireFromService=>
+        this.inventaire = inventaireFromService);
   }
+
 
   installeCadre(){
     this.cadre = "../../assets/img/Objets/Cadre01.png";

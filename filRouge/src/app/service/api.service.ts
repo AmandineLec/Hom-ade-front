@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import {Personnage} from "../personnage";
@@ -19,16 +19,13 @@ export class ApiService  {
   private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
   private deconnection = 'http://localhost:8080/logout';
-
-  authStatus : AuthStatus = {
-    logged : false
-  };
-  private personnage = new Subject<Personnage>();
-  PersoEnvoye$ = this.personnage.asObservable();
+  
+  private authStatus = new BehaviorSubject<AuthStatus>({logged : false});
+  authStatus$ = this.authStatus.asObservable();
 
   authenticate() : void {
-    const headers = new HttpHeaders(this.authStatus.logged ? {
-      authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
+    const headers = new HttpHeaders(this.authStatus.value.logged ? {
+      authorization : 'Basic ' + window.btoa(this.authStatus.value.personnage!.mail + ':' + this.authStatus.value.personnage!.password)
     } : {});
     this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
   }
@@ -59,8 +56,8 @@ export class ApiService  {
 
 
 
-  envoyerPerso(personnage :Personnage){
-    this.personnage.next(personnage);
+  envoyerStatus(authStatus :AuthStatus){
+    this.authStatus.next(authStatus);
   }
 
 }

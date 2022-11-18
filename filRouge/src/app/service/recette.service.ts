@@ -18,23 +18,23 @@ export class RecetteService {
   constructor( private httpClient :HttpClient) { }
 
   getOutils() :Observable<Objet[]> {
-    return this.httpClient.get<Objet[]>(this.outilsUrl); 
+    return this.httpClient.get<Objet[]>(this.outilsUrl, {withCredentials: true}); 
   }
 
   getMeubles() :Observable<Objet[]>{
-    return this.httpClient.get<Objet[]>(this.meublesUrl);
+    return this.httpClient.get<Objet[]>(this.meublesUrl, {withCredentials: true});
   }
 
   getDecos() :Observable<Objet[]>{
-    return this.httpClient.get<Objet[]>(this.decosUrl);
+    return this.httpClient.get<Objet[]>(this.decosUrl, {withCredentials: true});
   }
   
   getRecette(id:number) :Observable<Objet>{
-    return this.httpClient.get<Objet>(this.recetteUrl + id);
+    return this.httpClient.get<Objet>(this.recetteUrl + id, {withCredentials: true});
   }
 
   getObjet(id :number):Observable<Boolean>{
-    return this.httpClient.get<Boolean>(this.objetUrl +id);
+    return this.httpClient.get<Boolean>(this.objetUrl +id, {withCredentials: true});
   }
 
 }

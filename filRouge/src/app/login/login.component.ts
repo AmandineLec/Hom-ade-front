@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
           this.api.authStatus.logged = true;
           this.api.authStatus.personnage = response;
           this.api.authenticate();
+          this.api.envoyerPerso(response as Personnage);
+          sessionStorage.setItem("personnage", JSON.stringify(response));
           this.router.navigateByUrl('/account');
-          console.log(response)
-          sessionStorage.setItem("user", JSON.stringify(response));
         }
     },
     (error) => {

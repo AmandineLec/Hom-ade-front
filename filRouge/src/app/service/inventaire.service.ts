@@ -18,7 +18,7 @@ export class InventaireService {
   // inventaireOUrl = "http://localhost:8080/api/InventaireObjet";
 
   getInventaireRessource() :Observable<InventaireRessource[]> {
-    return this.http.get<InventaireRessource[]>(this.inventaireRUrl);
+    return this.http.get<InventaireRessource[]>(this.inventaireRUrl, {withCredentials: true});
   }
 
   // getInventaireObjet() :Observable<InventaireObjet> {

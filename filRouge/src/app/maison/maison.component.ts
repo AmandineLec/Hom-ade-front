@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { InventaireObjet } from '../interface/inventaire-objet';
 import { Objet } from '../interface/objet';
 import { InventaireService } from '../service/inventaire.service';
@@ -18,6 +19,10 @@ export class MaisonComponent implements OnInit {
   chaise: string = "../../assets/img/Divers/aplacer.png";
   toilettes: string = "../../assets/img/Divers/aplacer.png";
 
+  // private evenement = new Subject<string>();
+  // evenement$ = this.evenement.asObservable();
+  // Mettre ca dans un service
+
   constructor(private inventaireService :InventaireService) { }
   
   ngOnInit(): void {
@@ -33,6 +38,7 @@ export class MaisonComponent implements OnInit {
   }
 
   installeEtagere(){
+    // this.evenementservice.valeur.next("inventaire");
     this.etagere = "../../assets/img/Objets/Etagere01.png";
     document.getElementById('etagere')!.style.gridRow = "7 / span 2";
     document.getElementById('etagere')!.style.gridColumn = "3 / span 2";

@@ -36,9 +36,7 @@ export class ApiService  {
     const headers = new HttpHeaders(this.authStatus.logged ? {
       authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
     } : {});
-
-    this.http.get<Personnage>(this.account+ 'api/InventaireRessource', {withCredentials : true, headers : headers}).subscribe()
-
+    this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
   }
 
   isPersonnage(perso : any) : perso is Personnage{
@@ -82,16 +80,16 @@ export class ApiService  {
     this.router.navigateByUrl('/acount');
   }
 
-  // getPersonnageInfos(): Observable<Personnage>{
-  //   return this.http.get<Personnage>(this.account, {withCredentials : true});
-  // }
-
-
-  logout() : Observable<Personnage>{
-    return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
+  getPersonnageInfos(): Observable<Personnage>{
+    return this.http.get<Personnage>(this.account, {withCredentials : true});
   }
 
-  envoyerUser(personnage :Personnage){
+
+  // logout() : Observable<Personnage>{
+  //   return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
+  // }
+
+  envoyerPerso(personnage :Personnage){
     this.personnage.next(personnage);
   }
 

@@ -20,7 +20,7 @@ export class ObjetRecoltableService {
   }
 
   getObjetsRecoltables(): Observable<ObjetRecoltable[]> {
-    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables')
+    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables', {withCredentials: true})
       .pipe(
         catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
       );

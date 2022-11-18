@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Personnage} from "../personnage";
 import{ApiService} from "../api.service";
 import {Observable, Subscription} from "rxjs";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acount',
@@ -17,14 +18,14 @@ export class AcountComponent implements OnInit {
     password : ""
   }
 
-  constructor(private api : ApiService) { }
+  constructor(private api : ApiService, private router :Router) { }
 
   ngOnInit(): void {
-      this.sub = this.api.PersoEnvoye$.subscribe((perso)=> {
-      this.persoSub = perso; 
-    })
+      // this.sub = this.api.PersoEnvoye$.subscribe((perso)=> {
+      // this.persoSub = perso; 
+    // })
   }
-  ngOnDestroy():void {
-    this.sub.unsubscribe();
-  }
+  // ngOnDestroy():void {
+  //   this.sub.unsubscribe();
+  // }
 }

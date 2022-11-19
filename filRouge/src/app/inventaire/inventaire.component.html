@@ -20,7 +20,7 @@
             <article class="inventaire" *ngFor="let objet of inventaireObjet">
                 <ng-container *ngIf="objet.classe =='fil.rouge.model.Outil'"> 
                     <div class="inventaire__wrapper">
-                        <img *ngIf="objet.quantite>0" class="inventaire__img" src="../../assets/img/Objets/{{objet.objet.img}}" alt="{{objet.objet.nom}}">
+                        <button class="inventaire__button" (click)="EquiperOutil(objet.objet.id)"><img *ngIf="objet.quantite>0" class="inventaire__img" src="../../assets/img/Objets/{{objet.objet.img}}" alt="{{objet.objet.nom}}"></button>
                         <p *ngIf="objet.quantite>0" class="inventaire__quantite">x{{objet.quantite}}</p>
                     </div>
                 </ng-container>
@@ -46,5 +46,8 @@
                 </ng-container>
             </article>
         </div>
+</div>
+<div *ngIf="equipable == true">
+    <p>L'objet a bien été équipé</p>
 </div>
 

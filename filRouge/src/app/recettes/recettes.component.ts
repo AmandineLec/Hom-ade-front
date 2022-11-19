@@ -21,6 +21,10 @@ export class RecettesComponent implements OnInit {
   constructor(private recetteService :RecetteService, private modalService :ModalService) { }
   modalRecette__button :number = 1; 
   ngOnInit(): void {
+  
+  }
+
+  ngAfterViewInit() :void {
     this.recetteService.getOutils().subscribe(recetteFromService => 
       this.outils = recetteFromService);
     this.recetteService.getMeubles().subscribe(recetteFromService=>
@@ -30,7 +34,6 @@ export class RecettesComponent implements OnInit {
     this.recetteService.getRecettes().subscribe(recetteFromService =>
       this.objets = recetteFromService);
   }
-
   openModal(id: string) {
     this.modalService.open(id);
   }

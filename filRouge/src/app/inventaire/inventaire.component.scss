@@ -1,5 +1,54 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    margin : 10px; 
+}
+
 .modalInventaire{
     background-color: #643F1D;
     grid-row: 1/ span 1;
-    grid-column: 1/ span 8;
+    grid-column: 1/ span 7;
+    height : 400px; 
+    &__button {
+        border: solid 1px #EEAB00;
+        background-color: #643F1D;
+        font-size: 25px; 
+        color : white
+    }
+}
+
+.inventaire {
+    grid-column: span 1;
+    background-color: #643F1D;
+    &__wrapper{
+        grid-column: span 1;
+        display : grid; 
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    &__img{
+        width : 70px; 
+        height : 70px; 
+        object-fit: contain;
+        background-color: #4A2B0F;
+        border-radius: 5px;
+        grid-column: 1/ span 1;
+        grid-row: 1/span 1;
+        z-index : 1
+    }
+    &__quantite {
+        color : white;
+        margin : {
+            top : 50px;
+        }
+        grid-column: 1/ span 1;
+        grid-row: 1/ span 1;
+        z-index : 2;
+        text-align: end;
+        width : 80px; 
+    }
+    &__button {
+        background-color: transparent;
+        border : none
+    }
 }

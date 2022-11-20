@@ -8,16 +8,50 @@
 
     <div [ngSwitch]="modalRecette__button">
         <div *ngSwitchCase="1">
-            <app-outils></app-outils>
+            <div class="objet">
+                <article class="objet__article" *ngFor="let outil of outils">
+                        <h2 class="objet__title">{{outil.nom}}</h2>
+                        <img class="objet__img" src="../../assets/img/Objets/{{outil.img}}" alt="{{outil.nom}}">
+                        <div class="objet__recette" *ngFor="let recette of outil.recettes">
+                            <img class="objet__ressource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+                            <p class="objet__quantite">x{{recette.quantite_necessaire}}</p>
+                        </div>
+                        <button id="objet__button" class="objet__button" (click)="openModal('singleRecette' + outil.id)">Voir la recette</button>
+                </article>
+            </div>
         </div>
         <div *ngSwitchCase="2">
-            <app-meuble></app-meuble>
+            <div class="objet">
+                <article class="objet__article" *ngFor="let meuble of meubles">
+                        <h2 class="objet__title">{{meuble.nom}}</h2>
+                        <img class="objet__img" src="../../assets/img/Objets/{{meuble.img}}" alt="{{meuble.nom}}">
+                        <div class="objet__recette" *ngFor="let recette of meuble.recettes">
+                            <img class="objet__ressource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+                            <p class="objet__quantite">x{{recette.quantite_necessaire}}</p>
+                        </div>
+                        <button id="objet__button" class="objet__button" (click)="openModal('singleRecette' + meuble.id)">Voir la recette</button>
+                </article>
+            </div>
         </div>
         <div *ngSwitchCase="3">
-            <app-deco></app-deco>
+            <div class="objet">
+                <article class="objet__article" *ngFor="let deco of decos">
+                        <h2 class="objet__title">{{deco.nom}}</h2>
+                        <img class="objet__img" src="../../assets/img/Objets/{{deco.img}}" alt="{{deco.nom}}">
+                        <div class="objet__recette" *ngFor="let recette of deco.recettes">
+                            <img class="objet__ressource" src="../../assets/img/Ressources/{{recette.ressource.img}}" alt="{{recette.ressource.nom}}">
+                            <p class="objet__quantite">x{{recette.quantite_necessaire}}</p>
+                        </div>
+                        <button id="objet__button" class="objet__button" (click)="openModal('singleRecette' + deco.id)">Voir la recette</button>
+                </article>
+            </div>
         </div>
-
 </div>
+
+<singleRecette class="singleRecette" id="singleRecette{{outil.id}}" *ngFor="let outil of objets">
+    <app-single-recette [objet]="outil"></app-single-recette>
+    <button class="singleRecette__button" (click)="closeModal('singleRecette' + outil.id)">X</button>
+</singleRecette>
 
 
 

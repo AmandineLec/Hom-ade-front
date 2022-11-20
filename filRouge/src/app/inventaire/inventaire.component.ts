@@ -13,11 +13,18 @@ export class InventaireComponent implements OnInit {
 
   constructor(private inventaireService :InventaireService) { }
   inventaireRessource :InventaireRessource[]= [];
-  // inventaireObjet! :InventaireObjet;
+  inventaireObjet :InventaireObjet[] = [];
   inventaire : number = 1; 
+  equipable :Boolean = false; 
   ngOnInit(): void {
     this.inventaireService.getInventaireRessource().subscribe(inventaireFromService =>
       this.inventaireRessource = inventaireFromService);
+    this.inventaireService.getInventaireObjet().subscribe(inventaireFromService => 
+      this.inventaireObjet = inventaireFromService);  
   }
 
+  EquiperOutil(id :number){
+    this.inventaireService.getOutilEquiper(id).subscribe(outilFromService =>
+      this.equipable = outilFromService);
+  }
 }

@@ -5,4 +5,5 @@ export interface Objet {
     nom :string, 
     recettes :Recette[],
     img :string,
+    classe :string
 }

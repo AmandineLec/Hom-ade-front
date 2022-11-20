@@ -1,5 +1,6 @@
 import { Component, OnInit, Directive, ViewChild } from '@angular/core';
 import { InventaireComponent } from '../inventaire/inventaire.component';
+import { DecorerService } from '../service/decorer.service';
 import { ModalService } from '../_modal';
 
 @Component({
@@ -11,9 +12,12 @@ import { ModalService } from '../_modal';
 export class MenuJeuComponent implements OnInit {
   @ViewChild(InventaireComponent) inventairechild! : InventaireComponent
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private decorerService: DecorerService) { }
 
   ngOnInit(): void {
+    this.decorerService.evenement$.subscribe(valeur => {
+      
+    })
     // Subscribe => au changement de valeur openModal()
   }
 

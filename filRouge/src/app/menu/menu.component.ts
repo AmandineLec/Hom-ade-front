@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service'
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-menu',
@@ -13,18 +14,24 @@ export class MenuComponent implements OnInit {
   @Output() jouer = new EventEmitter<boolean>();
   constructor(private apiService : ApiService, private http: HttpClient, private router: Router){
   }
- 
-  authenticated = true;
+
+  authSub? : Subscription;
+  authenticated = false;
 
   logout(){
     this.apiService.logout().subscribe(response => {
       console.log("déconnecté");
       this.router.navigateByUrl('/acount');
-      this.apiService.authStatus = {logged : false};
+      this.apiService.envoyerStatus({
+        logged: false
+      })
     })
   }
 
   ngOnInit(): void {
+    this.authSub = this.apiService.authStatus$.subscribe((status) => {
+      this.authenticated = status.logged;
+    });
 
   }
 
@@ -37,4 +44,7 @@ export class MenuComponent implements OnInit {
     return false;
   }
 
+  ngOnDestroy() : void {
+    this.authSub?.unsubscribe();
+  }
 }

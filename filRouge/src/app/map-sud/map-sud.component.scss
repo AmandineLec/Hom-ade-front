@@ -3,7 +3,6 @@
     grid-row: 1/span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
     background-image: url('../../assets/img/Background/PageBas.png');
     background-size: 100% 100%;
     background-color: aqua;
@@ -50,21 +49,22 @@ button {
 
 #pluie {
     grid-column: 2/span 3;
+    grid-row: 2/ span 1;
  
 }
 
 #lin {
     grid-column: 9/span 2;
-    grid-row: 4/span 2;
+    grid-row: 3/span 2;
 }
 
 #eau {
     grid-column: 8/span 1;
-    grid-row: 6/span 1;
+    grid-row: 3/span 1;
 }
 
 #marbre {
-    grid-row: 5/span 3;
+    grid-row: 4/span 3;
     grid-column: 1 / span 3;
 }
 

@@ -12,8 +12,9 @@ export class RecetteService {
   outilsUrl ="http://localhost:8080/api/recetteOutils";
   meublesUrl = "http://localhost:8080/api/recetteMeubles";
   decosUrl = "http://localhost:8080/api/recetteDecos"; 
-  recetteUrl = "http://localhost:8080/api/recettes?id=";
+  recetteUrl = "http://localhost:8080/api/recette?id=";
   objetUrl = "http://localhost:8080/api/creation?id=";
+  recettesUrl = "http://localhost:8080/api/recettes";
 
   constructor( private httpClient :HttpClient) { }
 
@@ -27,6 +28,10 @@ export class RecetteService {
 
   getDecos() :Observable<Objet[]>{
     return this.httpClient.get<Objet[]>(this.decosUrl, {withCredentials: true});
+  }
+
+  getRecettes():Observable<Objet[]>{
+    return this.httpClient.get<Objet[]>(this.recettesUrl, {withCredentials: true});
   }
   
   getRecette(id:number) :Observable<Objet>{

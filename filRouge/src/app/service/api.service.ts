@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import {Personnage} from "../personnage";
+import {Personnage} from "../interface/personnage";
 import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
-import { AuthStatus } from '../auth-status';
+import { AuthStatus } from '../interface/auth-status';
 
 
 
@@ -13,24 +13,18 @@ import { AuthStatus } from '../auth-status';
 // this service will perform GET and POST requests to the http://localhost:8080/inscription endpoint.
 export class ApiService  {
 
-
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
   private inscription = 'http://localhost:8080/inscription';
   private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
   private deconnection = 'http://localhost:8080/logout';
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
-
-  authStatus : AuthStatus = {
-    logged : false
-  };
-  private personnage = new Subject<Personnage>();
-  PersoEnvoye$ = this.personnage.asObservable();
-
+  private authStatus = new BehaviorSubject<AuthStatus>({logged : false});
+  authStatus$ = this.authStatus.asObservable();
 
   authenticate() : void {
-    const headers = new HttpHeaders(this.authStatus.logged ? {
-      authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
+    const headers = new HttpHeaders(this.authStatus.value.logged ? {
+      authorization : 'Basic ' + window.btoa(this.authStatus.value.personnage!.mail + ':' + this.authStatus.value.personnage!.password)
     } : {});
     this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
   }
@@ -46,7 +40,6 @@ export class ApiService  {
   redirectTologin() {
     this.router.navigate(['/login']);
   }
-
   login(personnage: Personnage): Observable<Personnage>{
     return this.http.post<Personnage>(this.connection, personnage, {withCredentials : true});
   }
@@ -59,12 +52,8 @@ export class ApiService  {
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
 
-  getPersonnageInfos(): Observable<Personnage>{
-    return this.http.get<Personnage>(this.account, {withCredentials : true});
-  }
-
-  envoyerPerso(personnage :Personnage){
-    this.personnage.next(personnage);
+  envoyerStatus(authStatus :AuthStatus){
+    this.authStatus.next(authStatus);
   }
 
 }

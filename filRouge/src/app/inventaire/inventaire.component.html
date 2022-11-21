@@ -7,23 +7,47 @@
         <button class="modalInventaire__button" (click)="inventaire=4">Decos</button>
     </div>
 
-    <div [ngSwitch]="inventaire">
-        <div *ngSwitchCase="1">
+    <div  [ngSwitch]="inventaire">
+        <div class="container" *ngSwitchCase="1">
             <article class="inventaire" *ngFor="let ressource of inventaireRessource"> 
-                <img class="inventaire__img" *ngIf="ressource.quantite>0" src="../../assets/img/Ressources/{{ressource.ressource.img}}" alt="{{ressource.ressource.nom}}">
-                <p class="inventaire__quantite" *ngIf="ressource.quantite>0">x{{ressource.quantite}}</p>
+                <div class="inventaire__wrapper">
+                    <img class="inventaire__img" *ngIf="ressource.quantite>0" src="../../assets/img/Ressources/{{ressource.ressource.img}}" alt="{{ressource.ressource.nom}}">
+                    <p class="inventaire__quantite" *ngIf="ressource.quantite>0">x{{ressource.quantite}}</p>
+                </div>
             </article>
         </div>
-        <div *ngSwitchCase="2">
-            <article class="inventaire" >
-                <p>{{inventaireObjet | json}}</p>
+        <div class="container" *ngSwitchCase="2">
+            <article class="inventaire" *ngFor="let objet of inventaireObjet">
+                <ng-container *ngIf="objet.classe =='fil.rouge.model.Outil'"> 
+                    <div class="inventaire__wrapper">
+                        <button class="inventaire__button" (click)="EquiperOutil(objet.objet.id)"><img *ngIf="objet.quantite>0" class="inventaire__img" src="../../assets/img/Objets/{{objet.objet.img}}" alt="{{objet.objet.nom}}"></button>
+                        <p *ngIf="objet.quantite>0" class="inventaire__quantite">x{{objet.quantite}}</p>
+                    </div>
+                </ng-container>
             </article>
         </div>
-        <div *ngSwitchCase="3">
-
+        <div class="container" *ngSwitchCase="3">
+            <article class="inventaire" *ngFor="let objet of inventaireObjet">
+                <ng-container *ngIf="objet.classe =='fil.rouge.model.Meuble'"> 
+                    <div class="inventaire__wrapper">
+                        <img *ngIf="objet.quantite>0" class="inventaire__img" src="../../assets/img/Objets/{{objet.objet.img}}" alt="{{objet.objet.nom}}">
+                        <p *ngIf="objet.quantite>0" class="inventaire__quantite">x{{objet.quantite}}</p>
+                    </div>
+                </ng-container>
+            </article>
         </div>
-        <div *ngSwitchCase="3">
-
+        <div class="container" *ngSwitchCase="4">
+            <article class="inventaire" *ngFor="let objet of inventaireObjet">
+                <ng-container *ngIf="objet.classe =='fil.rouge.model.Decoration'"> 
+                    <div class="inventaire__wrapper">
+                        <img *ngIf="objet.quantite>0" class="inventaire__img" src="../../assets/img/Objets/{{objet.objet.img}}" alt="{{objet.objet.nom}}">
+                        <p *ngIf="objet.quantite>0" class="inventaire__quantite">x{{objet.quantite}}</p>
+                    </div>
+                </ng-container>
+            </article>
         </div>
+</div>
+<div *ngIf="equipable == true">
+    <p>L'objet a bien été équipé</p>
 </div>
 

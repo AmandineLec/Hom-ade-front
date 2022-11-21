@@ -1,1 +1,13 @@
-<p>map-nord-ouest works!</p>
+<div class="container">
+    <a routerLink="/jeu/o" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
+    <a routerLink="/jeu/n" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    
+    <button id="bambou" (click)="recolte(19)" *ngIf="objetsRecoltables[19].pv > 0"><img id="imgBambou" class="imgRessources" src="../../assets/img/Ressources/Bambou.png" alt=""></button>
+
+    <button id="paquerette" (click)="recolte(20)" *ngIf="objetsRecoltables[20].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Paquerette.png" alt="" id="imgPaquerettes"></button>
+
+    <button id="brique" (click)="recolte(21)" *ngIf="objetsRecoltables[21].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Brique.png" alt="" id="imgBrique"></button>
+
+    <button id="carpe" (click)="recolte(22)" *ngIf="objetsRecoltables[22].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Carpe.png" alt="" id="imgCarpe"></button>
+</div>
+

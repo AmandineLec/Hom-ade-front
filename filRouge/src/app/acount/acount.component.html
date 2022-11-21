@@ -1,1 +1,10 @@
-<p>acount works!</p>
+<div id="box">
+  <h1>Bienvenue {{persoSub.name}}</h1>
+  <h3>Vos informations personnelles</h3>
+  <ul>
+    <li>{{persoSub.mail}}</li>
+    <li *ngIf="persoSub.sexe == 1"><img src="../../assets/img/Divers/h1.png" alt=""></li>
+    <li *ngIf="persoSub.sexe == 2"><img src="../../assets/img/Divers/f2.png" alt=""></li>
+  </ul>
+</div>
+

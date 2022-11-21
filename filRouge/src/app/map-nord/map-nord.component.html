@@ -1,1 +1,18 @@
-<p>map-nord works!</p>
+<div class="map">
+    
+    <a routerLink="/jeu/c" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
+    <a routerLink="/jeu/ne" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    <a routerLink="/jeu/no" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
+
+    
+    <button id="mare" (click)="recolte(3)" *ngIf="objetsRecoltables[3].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Mare.png"/></button>
+
+
+    <button id="coton" (click)="recolte(4)" *ngIf="objetsRecoltables[4].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Coton.png"/></button>
+
+
+    <button id="coquille" (click)="recolte(5)" *ngIf="objetsRecoltables[5].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/CoquilleSaintJacques.png"></button>
+
+    <button id="roseau" (click)="recolte(6)" *ngIf="objetsRecoltables[6].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Roseaux.png"></button>
+
+</div>

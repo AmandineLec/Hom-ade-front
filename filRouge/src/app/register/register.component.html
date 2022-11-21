@@ -1,1 +1,36 @@
-<p>register works!</p>
+<div id="box">
+  <h2>INSCRIPTION</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="personnage">
+    <div>
+      <label for="name">Nom :</label><br>
+      <input class="input" type="text" name="name" id="name" formControlName="name" required>
+    </div><br>
+    <div>Avatar :</div>
+    <div id="genre">
+      <span>
+        <label for="masculin">
+          <img src="../../assets/img/Divers/h1.png" alt="avatar homme">
+        </label>
+        <input type="radio" name="sexe" id="masculin" value="1" formControlName="sexe" required>
+      </span>
+      <span>
+        <label for="feminin">
+          <img src="../../assets/img/Divers/f1.png" alt="avatar femme">
+        </label>
+        <input type="radio" name="sexe" id="feminin" value="2" formControlName="sexe" required>    
+      </span>
+    </div>
+    <div>
+      <label for="mail">E-mail :</label><br>
+      <input class="input" type="text" name="mail" id="mail" formControlName="mail" required>
+    </div>
+    <div>
+      <label for="password">Mot de passe :</label><br>
+      <input class="input" type="password" id="password" name="password" minlength="8" formControlName="password" required>
+    </div>
+    <div id="subscription">
+      <button id="submit" type="submit">S'inscrire !</button>
+      <a routerLink='/login'></a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,86 @@
+.container{
+    background-image: url('../../assets/img/Background/PageBasGauche.png');
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-color: #493530;
+}
+
+button{
+    background-color: transparent; 
+    border: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.direction{
+    width: 50px;
+    filter: contrast(50%);
+}
+
+.imgDirection{
+    width: 100%;
+}
+.imgDirection:hover{
+    filter: contrast(50%);
+}
+
+#haut{
+    grid-column: 6 / span 2;
+    grid-row: 1 / span 1;
+    justify-self: center;
+    align-self: flex-start;
+}
+#bas{
+    grid-column: 6 / span 2;
+    grid-row: 4 / span 1;
+    margin-top: 80px;
+}
+#droite{
+    grid-column: 12/ span 1;
+    grid-row: 2 / span 2;
+    align-self: center;
+    justify-self: flex-end;
+}
+#gauche{
+    grid-column: 1/ span 1;
+    grid-row: 3/ span 1;
+}
+
+.imgRessources:hover{
+    filter: contrast(125%);
+}
+
+#seve{
+    grid-column: 1 / span 1;
+    grid-row: 4/ span 1;
+    width: 80%;
+}
+
+#bois{
+    grid-column: 2 / span 2;
+    grid-row : 3/ span 1;
+}
+
+#schiste{
+    grid-column: 4 / span 2;
+    grid-row: 1/ span 2;
+}
+
+#chene{
+    grid-column: 10 / span 2;
+    grid-row: 2/ span 2;
+}
+
+#imgArbreCoupe {
+    height: 100px;
+}
+
+.imgRessources {
+    width : 100%; 
+    object-fit: contain;
+}

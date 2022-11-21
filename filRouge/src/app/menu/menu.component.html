@@ -1,1 +1,10 @@
-<p>menu works!</p>
+<nav>
+  <a routerLink='/' id="home"><img src="../../assets/img/Divers/maison-ecologique.png" alt="" ></a>
+  <ul>
+    <li *ngIf="!authenticated"><a routerLink='/register'>Inscription</a></li>
+    <li *ngIf="!authenticated"><a routerLink='/login'>Connexion</a></li>
+    <li *ngIf="authenticated"><a routerLink='/account'>Compte</a></li>
+    <li *ngIf="authenticated"><a routerLink='/login' (click)="logout()">Déconnexion</a></li>
+    <li *ngIf="authenticated"><a routerLink='/login' (click)="play(true)">Jouer</a></li>
+  </ul>
+</nav>

@@ -1,1 +1,17 @@
-<p>map-sud-ouest works!</p>
+<div class="container">
+    <a routerLink="/jeu/o" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
+    <a routerLink="/jeu/s"class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    
+    <button id="seve" (click)="recolte(11)" *ngIf="objetsRecoltables[11].pv > 0"><img id="imgSeve" class="imgRessources" src="../../assets/img/Ressources/Seve.png" alt=""></button>
+
+    <button id="bois" (click)="recolte(12)" *ngIf="objetsRecoltables[12].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/BoisMort.png" alt="" id="imgBois"></button>
+
+    <button id="schiste" (click)="recolte(13)" *ngIf="objetsRecoltables[13].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Schiste.png" alt="" id="imgSchiste"></button>
+
+    <button id="chene" (click)="recolte(14)" *ngIf="objetsRecoltables[15].pv > 0; else elseBlock"><img class="imgRessources" src="../../assets/img/Ressources/Chene.png" alt="" id="imgChene"></button>
+    <ng-template #elseBlock>
+        <button id="chene">
+        <img id="imgArbreCoupe" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
+    </button>
+    </ng-template>
+</div>

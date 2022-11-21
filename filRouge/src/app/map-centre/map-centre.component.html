@@ -1,1 +1,26 @@
-<p></p>
+<div class="map">
+    <a routerLink="/jeu/n" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
+    <a routerLink="/jeu/s" class="direction" id="bas"><img class="imgDirection" src="../../assets/img/Divers/bas.png" alt=""></a>
+    <a routerLink="/jeu/e" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    <a routerLink="/jeu/o" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
+
+
+    <a routerLink="/jeu/maison" id="maison"><img id="imgMaison" src="../../assets/img/Divers/Maison.png" /></a>
+
+    
+    <button id="arbre" (click)="recolte(0)" *ngIf="objetsRecoltables[0].pv > 0; else elseBlock">
+        <img id="imgArbre" class="imgRessources recoltable" src="../../assets/img/Ressources/Sequoia.png" />
+    </button>
+   
+    <ng-template #elseBlock>
+        <button id="arbre">
+        <img id="imgArbreCoupe" class="imgRessources" src="../../assets/img/Ressources/RecoltableComsomme/Arbre/CheneOuSequoiaCoupe.png" />
+    </button>
+    </ng-template>
+
+    <button id="poisson" (click)="recolte(1)" *ngIf="objetsRecoltables[1].pv > 0"><img class="imgRessources recoltable"
+            src="../../assets/img/Ressources/Sardine.png" /> </button>
+
+    <button id="silex" (click)="recolte(2)" *ngIf="objetsRecoltables[2].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Silex.png" /> </button>
+
+</div>

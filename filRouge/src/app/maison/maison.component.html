@@ -1,0 +1,33 @@
+<div class="container" id="container">
+    <!-- sortie Maison -->
+    <a routerLink="/jeu/c" id="sortie"><img id="imgDirection" src="../../assets/img/Divers/door.png" alt=""></a>
+    <!-- Boutons objets -->
+    <button type="button" id="cadre">
+        <img id="imgCadre" (click)="installeCadre()" [src]="cadre" alt="">
+    </button>
+    <button type="button" id="table">
+        <img id="imgTable" (click)="installeTable()" [src]="table" alt="">
+    </button>
+    <button type="button" id="etagere">
+        <img id="imgEtagere" (click)="installeEtagere()" [src]="etagere" alt="">
+    </button>
+    <button type="button" id="chaise">
+        <img id="imgChaise" (click)="installeChaise()" [src]="chaise" alt="">
+    </button>
+    <button type="button" id="toilettes">
+        <img id="imgToilettes" (click)="installeToilettes()" [src]="toilettes" alt="">
+    </button>
+
+    <button type="button" id="decoFond">
+        <img id="imgDecoFond" (click)="fond()" src="../../assets/img/Divers/aplacer.png" alt="">
+    </button>
+    <button type="button" id="decoBas">
+        <img id="imgDecoBas" (click)="bas()" src="../../assets/img/Divers/aplacer.png" alt="">
+    </button>
+
+    <!-- Murs/Sol -->
+    <span id="bas"></span>
+    <span id="fond"></span>
+    <span id="gauche"></span>
+    <span id="droite"></span>
+</div>

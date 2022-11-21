@@ -11,9 +11,10 @@ import { MapSudComponent } from '../map-sud/map-sud.component';
 import { MapSudOuestComponent } from '../map-sud-ouest/map-sud-ouest.component';
 import { MapOuestComponent } from '../map-ouest/map-ouest.component';
 import { MapNordOuestComponent } from '../map-nord-ouest/map-nord-ouest.component';
+import { MaisonComponent } from '../maison/maison.component';
 
 const routes: Routes = [
-  {path: '', component: MapCentreComponent},
+  {path: 'c', component: MapCentreComponent},
   {path: 'n', component: MapNordComponent},
   {path: 'ne', component: MapNordEstComponent},
   {path: 'e', component: MapEstComponent},
@@ -22,13 +23,17 @@ const routes: Routes = [
   {path: 'so', component: MapSudOuestComponent},
   {path: 'o', component: MapOuestComponent},
   {path: 'no', component: MapNordOuestComponent},
+  {path: 'menu', component: MenuJeuComponent},
+  {path: 'maison', component: MaisonComponent}
 ];
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
 })
 export class JeuRoutingModule { }

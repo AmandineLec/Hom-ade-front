@@ -1,1 +1,22 @@
-<p>map-sud works!</p>
+<div class="map">
+
+    <a routerLink="/jeu/c" class="direction" id="haut"><img class="imgDirection" src="../../assets/img/Divers/haut.png" alt=""></a>
+    <a routerLink="/jeu/se" class="direction" id="droite"><img class="imgDirection" src="../../assets/img/Divers/droite.png" alt=""></a>
+    <a routerLink="/jeu/so" class="direction" id="gauche"><img class="imgDirection" src="../../assets/img/Divers/gauche.png" alt=""></a>
+
+   
+        <button id="pluie" (click)="recolte(7)" *ngIf="objetsRecoltables[7].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Pluie.png"/> </button>
+  
+
+
+        <button id="lin" (click)="recolte(8)" *ngIf="objetsRecoltables[8].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Lin.png"/> </button>
+
+
+
+        <button id="eau" (click)="recolte(9)" *ngIf="objetsRecoltables[9].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Eau.png"/> </button>
+
+
+
+        <button id="marbre" (click)="recolte(10)" *ngIf="objetsRecoltables[10].pv > 0"><img class="imgRessources" src="../../assets/img/Ressources/Marbre.png"/> </button>
+  
+</div>

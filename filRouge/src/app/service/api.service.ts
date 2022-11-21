@@ -14,12 +14,11 @@ import { AuthStatus } from '../auth-status';
 export class ApiService  {
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
-  authenticated = false;
   private inscription = 'http://localhost:8080/inscription';
   private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
   private deconnection = 'http://localhost:8080/logout';
-  
+
   private authStatus = new BehaviorSubject<AuthStatus>({logged : false});
   authStatus$ = this.authStatus.asObservable();
 
@@ -53,9 +52,7 @@ export class ApiService  {
   logout() : Observable<Personnage>{
     return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
   }
-
-
-
+  
   envoyerStatus(authStatus :AuthStatus){
     this.authStatus.next(authStatus);
   }

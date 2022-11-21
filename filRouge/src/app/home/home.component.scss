@@ -1,0 +1,33 @@
+div{
+    text-align: center;
+}
+
+img{
+    width: 60%;
+}
+
+article{
+    color: white;
+    font-size: x-large;
+    line-height: 3rem;
+    margin-bottom: 30px;
+}
+
+button{
+    text-decoration: none;
+    background: transparent;
+    padding: 30px;
+    font-size: xx-large;
+    color: #EEAB00;
+    border-radius: 450%;
+    border: #EEAB00 10px solid;
+    height: 200px;
+    font-weight: bolder;
+}
+
+button:hover{
+    color: #99B800;
+    background: transparent;
+    border: #99B800 10px solid;
+    
+}

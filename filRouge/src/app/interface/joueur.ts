@@ -1,5 +1,5 @@
 export interface Joueur {
-    sexe :string, 
+    sexe :number, 
     mail :string, 
     niveau_maison :number,
     name : string; 

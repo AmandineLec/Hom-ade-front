@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { Joueur } from '../interface/joueur';
 import { Objet } from '../interface/objet';
 import { RecetteService } from '../service/recette.service';

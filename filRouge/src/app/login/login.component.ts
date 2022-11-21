@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Personnage} from "../personnage";
-import{ApiService} from "../api.service";
+import {Personnage} from "../interface/personnage";
+import{ApiService} from "../service/api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
 import { Router } from '@angular/router';

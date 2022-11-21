@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import {Personnage} from "./personnage";
+import {Personnage} from "../interface/personnage";
 import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
-import {LogStatus} from "./log-status";
+import {LogStatus} from "../interface/log-status";
 import { map } from 'rxjs/operators';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import { AuthStatus } from './auth-status';
-import { Joueur } from './interface/joueur';
+import { AuthStatus } from '../interface/auth-status';
+import { Joueur } from '../interface/joueur';
 
 
 

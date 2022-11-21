@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Personnage} from "../personnage";
-import{ApiService} from "../api.service";
+import {Personnage} from "../interface/personnage";
+import{ApiService} from "../service/api.service";
 import {Observable, Subscription} from "rxjs";
 import { Router } from '@angular/router';
 

@@ -10,3 +10,7 @@
     </div>
     <button class="singleRecette__button" (click)="CreerObjet(objet.id)">Créer l'objet</button>
 </article>
+
+<div class="created" *ngIf="created==true">
+    <p class="created__msg">L'objet a bien été ajouté à votre inventaire</p>
+</div>

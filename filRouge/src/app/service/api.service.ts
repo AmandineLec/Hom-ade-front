@@ -1,9 +1,13 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import {Personnage} from "../personnage";
+import {Personnage} from "../interface/personnage";
 import {ActivatedRoute, Router, RouterModule, Routes} from "@angular/router";
-import { AuthStatus } from '../auth-status';
+import {LogStatus} from "../interface/log-status";
+import { map } from 'rxjs/operators';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { AuthStatus } from '../interface/auth-status';
+import { Joueur } from '../interface/joueur';
 
 
 
@@ -13,25 +17,33 @@ import { AuthStatus } from '../auth-status';
 // this service will perform GET and POST requests to the http://localhost:8080/inscription endpoint.
 export class ApiService  {
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
+
   private inscription = 'http://localhost:8080/inscription';
   private connection = 'http://localhost:8080/connection';
   private account = 'http://localhost:8080/';
   private deconnection = 'http://localhost:8080/logout';
 
-  private authStatus = new BehaviorSubject<AuthStatus>({logged : false});
-  authStatus$ = this.authStatus.asObservable();
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
+
+  authStatus : AuthStatus = {
+    logged : false
+  };
+  private personnage = new Subject<Personnage>();
+
+  PersoEnvoye$ = this.personnage.asObservable();
+
 
   authenticate() : void {
-    const headers = new HttpHeaders(this.authStatus.value.logged ? {
-      authorization : 'Basic ' + window.btoa(this.authStatus.value.personnage!.mail + ':' + this.authStatus.value.personnage!.password)
+    const headers = new HttpHeaders(this.authStatus.logged ? {
+      authorization : 'Basic ' + window.btoa(this.authStatus.personnage!.mail + ':' + this.authStatus.personnage!.password)
     } : {});
-    this.http.get<Personnage>(this.account,{withCredentials : true, headers : headers}).subscribe()
+    this.http.get<Joueur>(this.account,{withCredentials : true, headers : headers}).subscribe()
   }
 
   isPersonnage(perso : any) : perso is Personnage{
     return "mail" in perso;
   }
+
 
   register(personnage: Personnage): Observable<Personnage>{
     return this.http.post<Personnage>(this.inscription, personnage);
@@ -46,15 +58,22 @@ export class ApiService  {
   }
 
   redirectToAccount() {
-    this.router.navigateByUrl('/account');
+    this.router.navigateByUrl('/acount');
   }
 
-  logout() : Observable<Personnage>{
-    return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
+  getPersonnageInfos(): Observable<Personnage>{
+    return this.http.get<Personnage>(this.account, {withCredentials : true});
   }
+
+
+  // logout() : Observable<Personnage>{
+  //   return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
+  // }
+
+  envoyerPerso(personnage :Personnage){
+    this.personnage.next(personnage);
+  }
+
   
-  envoyerStatus(authStatus :AuthStatus){
-    this.authStatus.next(authStatus);
-  }
 
 }

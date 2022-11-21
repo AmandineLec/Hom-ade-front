@@ -10,7 +10,7 @@ import { RecetteService } from '../service/recette.service';
 })
 export class SingleRecetteComponent implements OnInit {
   @Input() objet! :Objet; 
-  created :Boolean = true; 
+  created :Boolean = false; 
   constructor(private recetteService :RecetteService) { }
   ngOnInit(): void {
       this.recetteService.getRecette(this.objet.id).subscribe(objetFromService=>
@@ -19,6 +19,6 @@ export class SingleRecetteComponent implements OnInit {
 
   CreerObjet(id : number) {
     this.recetteService.getObjet(id).subscribe(objetFromService => 
-      this.created = objetFromService)
+      this.created = objetFromService);
   }
 }

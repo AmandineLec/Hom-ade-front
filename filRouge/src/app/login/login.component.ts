@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import{ApiService} from "../service/api.service";
+import{ApiService} from "../interface/service/service/api.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Joueur } from '../interface/joueur';
 
 
 
@@ -33,6 +34,7 @@ credentials: any;
             personnage : response
           });
           this.api.authenticate();
+          this.api.envoyerPerso(response as Joueur);
           sessionStorage.setItem("personnage", JSON.stringify(response));
           this.router.navigateByUrl('/account');
         }

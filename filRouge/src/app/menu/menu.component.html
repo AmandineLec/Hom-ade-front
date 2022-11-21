@@ -4,7 +4,7 @@
     <li *ngIf="!authenticated"><a routerLink='/register'>Inscription</a></li>
     <li *ngIf="!authenticated"><a routerLink='/login'>Connexion</a></li>
     <li *ngIf="authenticated"><a routerLink='/account'>Compte</a></li>
-    <li *ngIf="authenticated"><a routerLink='/login' (click)="logout()">Déconnexion</a></li>
+    <li *ngIf="authenticated"><a (click)="logout()">Déconnexion</a></li>
     <li *ngIf="authenticated"><a routerLink='/login' (click)="play(true)">Jouer</a></li>
   </ul>
 </nav>

@@ -21,7 +21,12 @@ export class MapCentreComponent implements OnInit {
 
   recolte(index: number) {
     this.objRecSer.recolte(index).subscribe((objetRecoltable) => {
+      if(objetRecoltable.idObjetRecoltable == 0){
+        alert("Vous n'avez pas le bon outil")
+      }
+      else {
       this.objetsRecoltables[index] = objetRecoltable;
+      }
     });
   }
 }

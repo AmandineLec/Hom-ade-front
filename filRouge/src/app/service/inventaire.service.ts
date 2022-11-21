@@ -27,6 +27,7 @@ export class InventaireService {
   }
 
   getOutilEquiper(id :number) :Observable<Boolean> {
+    console.log(this.OutilInventaire +id);
     return this.http.get<Boolean>(this.OutilInventaire + id, {withCredentials : true});
   }
 }

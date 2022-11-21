@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   }
 
   authSub? : Subscription;
-  authenticated = false;
+  authenticated = true;
 
   logout(){
     this.apiService.logout().subscribe(response => {
@@ -30,6 +30,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.authSub = this.apiService.authStatus$.subscribe((status) => {
+      console.log(status);
       this.authenticated = status.logged;
     });
 

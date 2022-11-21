@@ -3,7 +3,7 @@
 import { ModalService } from './modal.service';
 
 @Component({ 
-    selector: 'jw-modal, parametres, recette, inventaire, singleRecette', 
+    selector: 'jw-modal, parametres, recette, inventaire, singleRecette, equiper', 
     templateUrl: 'modal.component.html', 
 })
 export class ModalComponent implements OnInit, OnDestroy {

@@ -48,11 +48,12 @@ export class ApiService  {
     this.router.navigateByUrl('/account');
   }
 
-  logout() : Observable<Personnage>{
-    return this.http.post<Personnage>(this.deconnection, {withCredentials : true});
+  logout() : Observable<any>{
+    return this.http.post<any>(this.deconnection, {withCredentials : true});
   }
 
   envoyerStatus(authStatus :AuthStatus){
+    console.log("status sent");
     this.authStatus.next(authStatus);
   }
 

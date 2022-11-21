@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InventaireObjet } from '../interface/inventaire-objet';
 import { InventaireRessource } from '../interface/inventaire-ressource';
 import { InventaireService } from '../service/inventaire.service';
+import { ModalService } from '../_modal';
 
 @Component({
   selector: 'app-inventaire',
@@ -11,7 +12,7 @@ import { InventaireService } from '../service/inventaire.service';
 })
 export class InventaireComponent implements OnInit {
 
-  constructor(private inventaireService :InventaireService) { }
+  constructor(private inventaireService :InventaireService, private modalService :ModalService) { }
   inventaireRessource :InventaireRessource[]= [];
   inventaireObjet :InventaireObjet[] = [];
   inventaire : number = 1; 
@@ -23,8 +24,15 @@ export class InventaireComponent implements OnInit {
       this.inventaireObjet = inventaireFromService);  
   }
 
-  EquiperOutil(id :number){
+  EquiperOutil(id :number, idModal :string){
     this.inventaireService.getOutilEquiper(id).subscribe(outilFromService =>
       this.equipable = outilFromService);
+      if(this.equipable==true){
+        this.modalService.open(idModal);
+      }
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 }

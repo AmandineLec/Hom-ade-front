@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ObjetRecoltable } from '../interface/objet-recoltable';
 import { Observable, of, pipe } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +19,7 @@ export class ObjetRecoltableService {
   }
 
   getObjetsRecoltables(): Observable<ObjetRecoltable[]> {
-    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables', {withCredentials: true})
-      .pipe(
-        catchError(this.handleError<ObjetRecoltable[]>('getObjetsRecoltables', []))
-      );
+    return this.http.get<ObjetRecoltable[]>(`${this.objetRecoltableUrl}` + 'recoltables', {withCredentials: true});      
   }
 
   getObjetRecoltable(index: number): ObjetRecoltable {
@@ -33,28 +29,13 @@ export class ObjetRecoltableService {
 
     return this.objetsRecoltables[index];
 
-    // const url = '${this.objetRecoltableUrl}/${id}';
-    // return this.http.get<ObjetRecoltable>(url).pipe(
-    //   catchError(this.handleError<ObjetRecoltable>('getObjetRecoltable id=${id}'))
-    // );
   }
 
   recolte(index: number): Observable<ObjetRecoltable> {
     const url: string = this.objetRecoltableUrl + 'recolte?index=' + index;
-    return this.http.get<ObjetRecoltable>(url, {withCredentials: true})
-    .pipe(
-      catchError(this.handleError<ObjetRecoltable>('recolte'))
-    );
+    return this.http.get<ObjetRecoltable>(url, {withCredentials: true});    
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    //alert("Vous n'avez pas le bon outil");
-    console.log('${operation} failed: ${error.message}');
-    return (error: any): Observable<T> => {
-      console.error(error);
-      console.log('${operation} failed: ${error.message}');
-      return of(result as T);
-    }
-  }
+
 
 }

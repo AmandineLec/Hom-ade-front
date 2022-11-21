@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../service/api.service'
+import {ApiService} from "../service/api.service";
 import {Subscription} from "rxjs";
 
 @Component({

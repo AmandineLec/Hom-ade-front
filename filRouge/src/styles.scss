@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  height: 100vh;
+  // height: 100vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   background-image: url('assets/img/Background/PageAccueil.png');
@@ -42,7 +42,8 @@ app-root{
     justify-self: center;
     align-self: center;
     width: 600px;
-    height: 400px;
+    grid-row: 2/ span 2;
+    margin-top : 60px; 
 }
 
 .modalRecette {
